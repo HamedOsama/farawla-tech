@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 
-import logo from '../../public/assets/logo.png'
+import logo from '../../../public/assets/logo.png'
 
 const HomePageIntro = () => {
   return (
