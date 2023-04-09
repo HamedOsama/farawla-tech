@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import ParticleBg from './components/ParticleBg'
-import Navbar from './components/Navbar'
-import HomePageIntro from './components/Homepage/HomePageIntro'
-
+import ParticleBg from '@/components/ParticleBg'
+import Navbar from '@/components/Navbar'
+import HomePageIntro from '@/components/Homepage/HomePageIntro'
 
 export default function Home() {
   return (
