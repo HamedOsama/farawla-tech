@@ -23,9 +23,9 @@ const Problem = ({ name, img }: ProblemProps) => {
       <Image
         src={img.src}
         alt={name}
-        width={200}
-        height={200}
-        sizes='(max-width: 768px) 100vw, 200px'
+        width={150}
+        height={150}
+        sizes='(max-width: 768px) 100vw, 150px'
         className='aspect-square object-contain'
       />
       <p className='text-black text-center text-lg sm:text-2xl'>{name}</p>

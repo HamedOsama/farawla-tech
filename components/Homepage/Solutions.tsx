@@ -6,7 +6,11 @@ import img3 from '@assets/solution3.png'
 import img4 from '@assets/solution4.png'
 import img5 from '@assets/solution5.png'
 
+import abBg from '@assets/solution-after.png'
+
 import Problem from '../Problems/Problem'
+import Image from 'next/image'
+import SectionTitle from '../SectionTitle'
 const Solutions = () => {
   const solutions = [
     {
@@ -31,14 +35,37 @@ const Solutions = () => {
     }
   ]
   return (
-    <section className='bg-white sm:h-screen flex items-center justify-center py-8 sm:py-0 overflow-hidden'>
-      <div className="flex flex-wrap items-center justify-center w-3/4 gap-8 sm:gap-8 mx-auto">
-        {solutions.map((solution, i) => (
-          <div className="w-full sm:w-1/4">
-            <Problem name={solution.name} img={solution.img} key={i} />
-          </div>
-        ))}
-      </div>
+    <section className='relative bg-white lg:h-screen flex flex-col items-center justify-center py-8 lg:py-0 overflow-hidden'>
+        <SectionTitle>عارفين اللي تاعبك</SectionTitle>
+        <div className="flex-1 flex flex-wrap items-center justify-center w-3/4 gap-8 sm:gap-8 mx-auto">
+          {solutions.map((solution, i) => (
+            <div className="w-full md:w-1/4">
+              <Problem name={solution.name} img={solution.img} key={i} />
+            </div>
+          ))}
+        </div>
+      
+
+      <span className='absolute top-12 md:top-0 -left-6'>
+        <Image
+          src={abBg.src}
+          alt="Farawla Tech"
+          width={200}
+          height={200}
+          sizes='(max-width: 768px) 100px, 200px'
+          className='w-full sm:w-full'
+        />
+      </span>
+      <span className='absolute top-12 md:top-0 -right-6'>
+        <Image
+          src={abBg.src}
+          alt="Farawla Tech"
+          width={200}
+          height={200}
+          sizes='(max-width: 768px) 100px, 200px'
+          className='w-full sm:w-full'
+        />
+      </span>
     </section>
   )
 }
