@@ -20,7 +20,7 @@ const ParticleBg = () => {
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
-        options={particlesConfig}
+        options={particlesConfig as any}
       />
     </div>
   );
