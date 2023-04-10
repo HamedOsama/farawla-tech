@@ -3,6 +3,7 @@ import ParticleBg from '@/components/ParticleBg'
 import Navbar from '@/components/Navbar'
 import HomePageIntro from '@/components/Homepage/HomePageIntro'
 import Problems from '@/components/Problems/Problems'
+import Offer from '@/components/Homepage/Offer'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         </div>
       </section>
       <Problems />
+      <Offer />
     </main>
   )
 }
