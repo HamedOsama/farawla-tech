@@ -15,7 +15,7 @@ const ParticleBg = () => {
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {}, []);
   return (
-    <div className="absolute inset-0 bg-black">
+    <div className="absolute inset-0 bg-black -z-10">
       <Particles
         id="tsparticles"
         init={particlesInit}
