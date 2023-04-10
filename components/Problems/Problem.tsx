@@ -10,7 +10,7 @@ interface ProblemProps {
 
 const Problem = ({ name, img }: ProblemProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: '0px' });
+  const isInView = useInView(ref, { once: false, margin: '10%'  });
   return (
     <div
       ref={ref}

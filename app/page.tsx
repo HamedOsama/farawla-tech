@@ -4,12 +4,13 @@ import Navbar from '@/components/Navbar'
 import HomePageIntro from '@/components/Homepage/HomePageIntro'
 import Problems from '@/components/Problems/Problems'
 import Offer from '@/components/Homepage/Offer'
+import Solutions from '@/components/Homepage/Solutions'
 
 export default function Home() {
   return (
     <main>
       <section className="relative min-h-[100svh] sm:min-h-screen">
-        <ParticleBg />
+        {/* <ParticleBg /> */}
         <div className="absolute inset-0 z-10 flex flex-col">
           <Navbar />
           <HomePageIntro />
@@ -17,6 +18,7 @@ export default function Home() {
       </section>
       <Problems />
       <Offer />
+      <Solutions />
     </main>
   )
 }
