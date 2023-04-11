@@ -5,6 +5,7 @@ import HomePageIntro from '@/components/Homepage/HomePageIntro'
 import Problems from '@/components/Problems/Problems'
 import Offer from '@/components/Homepage/Offer'
 import Solutions from '@/components/Homepage/Solutions'
+import OurTeam from '@/components/OurTeam/OurTeam'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Problems />
       <Offer />
       <Solutions />
+      <OurTeam />
     </main>
   )
 }
