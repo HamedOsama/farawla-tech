@@ -3,9 +3,13 @@ import React from 'react'
 import logo from '@assets/logo.png'
 import Image from 'next/image'
 import Facebook from './Icons/Facebook'
+import ParticleBg from './ParticleBg'
 const Footer = () => {
   return (
-    <footer className='py-4 sm:py-6 bg-black'>
+    <footer className='relative py-4 sm:py-6 overflow-hidden'>
+      <div className="absolute inset-0">
+        <ParticleBg />
+      </div>
       <div className="py-4 sm:py-12 flex items-center justify-center md:justify-start px-8 gap-4">
         <div className="w-6 md:w-20">
           <Image

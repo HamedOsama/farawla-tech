@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main>
       <section className="relative min-h-[100svh] sm:min-h-screen">
-        {/* <ParticleBg /> */}
+        <ParticleBg />
         <div className="absolute inset-0 z-10 flex flex-col">
           <Navbar />
           <HomePageIntro />
