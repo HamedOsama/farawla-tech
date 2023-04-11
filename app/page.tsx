@@ -6,6 +6,7 @@ import Problems from '@/components/Problems/Problems'
 import Offer from '@/components/Homepage/Offer'
 import Solutions from '@/components/Homepage/Solutions'
 import OurTeam from '@/components/OurTeam/OurTeam'
+import Sponsors from '@/components/Sponsors'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Offer />
       <Solutions />
       <OurTeam />
+      <Sponsors />
     </main>
   )
 }

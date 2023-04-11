@@ -73,9 +73,6 @@ const OurTeam = () => {
           </div>
         ))}
       </div>
-
-
-
     </section>
   )
 }

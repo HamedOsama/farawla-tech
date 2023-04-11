@@ -61,14 +61,11 @@ const Solutions = () => {
       </div>
       <div className="flex-1 flex flex-wrap items-center justify-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {solutions.map((solution, i) => (
-          <div className="w-full md:w-1/4" key={i} >
+          <div className="w-full md:w-1/4 h-auto" key={i} >
             <Problem name={solution.name} img={solution.img} />
           </div>
         ))}
       </div>
-
-
-
     </section>
   )
 }
