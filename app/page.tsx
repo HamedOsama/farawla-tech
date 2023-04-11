@@ -7,6 +7,7 @@ import Offer from '@/components/Homepage/Offer'
 import Solutions from '@/components/Homepage/Solutions'
 import OurTeam from '@/components/OurTeam/OurTeam'
 import Sponsors from '@/components/Sponsors'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Solutions />
       <OurTeam />
       <Sponsors />
+      <Footer />
     </main>
   )
 }
