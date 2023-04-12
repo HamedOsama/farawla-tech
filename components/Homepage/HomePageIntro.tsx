@@ -14,7 +14,9 @@ const HomePageIntro = () => {
         transition={{ duration: 1.5, delay: 0.25 }}
         className="flex-1 flex flex-col items-center justify-center gap-6">
         <Image
-          src={logo}
+          src={logo.src}
+          blurDataURL={logo.blurDataURL}
+          placeholder='blur'
           alt="Farawla Tech"
           width={180}
           height={180}
