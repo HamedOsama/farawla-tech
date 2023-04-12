@@ -1,10 +1,10 @@
 const particlesConfig = {
   particles: {
     number: {
-      value: 90,
+      value: 40,
       density: {
-        enable: true,
-        value_area: 350
+        enable: false,
+        value_area: 5000
       }
     },
     color: {
@@ -17,7 +17,7 @@ const particlesConfig = {
         color: "#4d9fb3"
       },
       polygon: {
-        nb_sides: 5
+        nb_sides: 6
       },
       image: {
         src: "",
@@ -71,7 +71,7 @@ const particlesConfig = {
     detect_on: "canvas",
     events: {
       onhover: {
-        enable: true,
+        enable: false,
         mode: "repulse"
       },
       onclick: {
