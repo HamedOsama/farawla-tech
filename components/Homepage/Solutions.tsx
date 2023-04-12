@@ -35,7 +35,7 @@ const Solutions = () => {
     }
   ]
   return (
-    <section className='relative bg-white lg:min-h-screen flex flex-col items-center justify-center py-8  overflow-hidden'>
+    <section className='solutions relative bg-white lg:min-h-screen flex flex-col items-center justify-center py-8  overflow-hidden'>
       <div className="relative w-full">
         <span className='absolute top-0 -left-6'>
           <Image

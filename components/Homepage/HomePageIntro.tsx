@@ -6,6 +6,13 @@ import { motion } from 'framer-motion'
 import logo from '@assets/logo.png'
 
 const HomePageIntro = () => {
+  const scrollToHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const element = document.querySelector('.solutions');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', });
+    }
+  }
   return (
     <div className="w-full h-full flex-1 flex flex-col sm:flex-row items-center sm:items-start px-8 md:px-11 lg:px-20 xl:px-32 overflow-hidden">
       <motion.div
@@ -29,7 +36,7 @@ const HomePageIntro = () => {
         transition={{ duration: 1.5, delay: 0.25 }}
         className="h-full grid justify-items-center content-center gap-10 w-full sm:w-3/5">
         <p className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>في زرعك اللي يهمك إحنا في ظهرك ولا يهمك</p>
-        <button type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>حلول فرولةتيك</button>
+        <button onClick={scrollToHandler} type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>حلول فرولةتيك</button>
       </motion.div>
     </div>
   )
