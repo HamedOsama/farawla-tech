@@ -11,7 +11,7 @@ const Offer = () => {
   const isInView = useInView(ref, { once: false, margin: '-50%' });
 
   return (
-    <section ref={ref} className="sm:h-screen py-12 overflow-hidden bg-white flex flex-col">
+    <section ref={ref} className="sm:min-h-screen py-12 overflow-hidden bg-white flex flex-col">
       <SectionTitle>ما تقدمه لك فراولة تيك</SectionTitle>
       <div className="grid sm:grid-cols-2 justify-items-center items-center -mt-12  w-11/12 sm:w-2/3 gap-4 sm:gap-8 mx-auto flex-1">
         <Image

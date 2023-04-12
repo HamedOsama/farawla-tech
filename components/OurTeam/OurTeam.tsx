@@ -44,7 +44,7 @@ const OurTeam = () => {
   ]
 
   return (
-    <section className='relative bg-white lg:h-screen flex flex-col items-center justify-center py-8  overflow-hidden'>
+    <section className='relative bg-white lg:min-h-screen flex flex-col items-center justify-center py-8  overflow-hidden'>
       <div className="relative w-full">
         <span className='absolute top-1/2 -left-5 md:-left-10 -translate-y-1/2'>
           <Image

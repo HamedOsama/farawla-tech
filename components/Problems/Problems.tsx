@@ -26,7 +26,7 @@ const Problems = () => {
     },
   ]
   return (
-    <section className='bg-white sm:h-screen flex items-center justify-center py-8 sm:py-0 overflow-hidden'>
+    <section className='bg-white sm:min-h-screen flex items-center justify-center py-8 overflow-hidden'>
       <div className="grid sm:grid-cols-2 justify-items-center w-1/2 gap-8 sm:gap-8 mx-auto">
         {problems.map((problem, i) => (
           <Problem name={problem.name} img={problem.img} key={i} />
