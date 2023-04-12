@@ -12,6 +12,7 @@ const font = Lalezar({
   preload: true,
   variable: '--font-lalezar',
   subsets: ['arabic'],
+  display: 'swap'
 })
 
 export default function RootLayout({
