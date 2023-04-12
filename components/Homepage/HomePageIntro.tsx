@@ -27,6 +27,7 @@ const HomePageIntro = () => {
           alt="Farawla Tech"
           width={180}
           height={180}
+          priority
         />
         <p className='text-white text-4xl sm:text-3xl lg:text-5xl xl:text-6xl'>Farawlatech</p>
       </motion.div>
