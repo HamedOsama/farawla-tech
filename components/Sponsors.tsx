@@ -56,11 +56,7 @@ const Sponsors = () => {
             <div
               key={i}
               ref={ref}
-              style={{
-                opacity: isInView ? 1 : 0,
-                transform: isInView ? 'translateY(0)' : 'translateY(200px)',
-              }}
-              className='w-full h-full transition-all duration-700 ease-in-out flex items-center justify-center'
+              className='w-full h-full flex items-center justify-center'
             >
               <Image
                 src={el.img.src}
@@ -70,7 +66,11 @@ const Sponsors = () => {
                 width={150}
                 height={150}
                 sizes='150px'
-                className='w-full'
+                className='w-full transition-all duration-700 ease-in-out'
+                style={{
+                  opacity: isInView ? 1 : 0,
+                  transform: isInView ? 'translateY(0)' : 'translateY(150%)',
+                }}
               />
             </div>)
         })}
