@@ -51,7 +51,7 @@ const Sponsors = () => {
       <div className="flex-1 grid md:grid-cols-4 items-center justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {sponsorImages.map((el, i) => {
           const ref = React.useRef<HTMLDivElement>(null)
-          const isInView = useInView(ref, { once: false, margin: '0%' })
+          const isInView = useInView(ref, { once: false, margin: '-50px' })
           return (
             <div
               key={i}

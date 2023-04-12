@@ -10,7 +10,7 @@ interface ProblemProps {
 
 const Problem = ({ name, img }: ProblemProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: '10%' });
+  const isInView = useInView(ref, { once: false, margin: '5%' });
   return (
     <div
       ref={ref}
@@ -25,10 +25,18 @@ const Problem = ({ name, img }: ProblemProps) => {
         className='aspect-square object-contain duration-1000 ease-in-out'
         style={{
           opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(150%)',
+          transform: isInView ? 'translateY(0)' : 'translateY(250px)',
         }}
       />
-      <p className='text-black text-center text-lg sm:text-2xl'>{name}</p>
+      <p
+        className='text-black text-center text-lg sm:text-2xl duration-1000 delay-100 ease-in-out'
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateY(0)' : 'translateY(250px)',
+        }}
+      >
+        {name}
+      </p>
     </div>
   )
 }
