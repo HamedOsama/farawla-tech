@@ -24,7 +24,7 @@ const Member = ({ name, position, faculty, university, img }: MemberProps) => {
       }}
     >
       <div className="relative rounded-[50%] w-36 h-36 overflow-hidden mb-6 cursor-pointer">
-        <div className="absolute inset-0 bg-black/50 duration-300 ease-in-out hover:bg-transparent"></div>
+        {/* <div className="absolute inset-0 bg-black/50 duration-300 ease-in-out hover:bg-transparent"></div> */}
         <Image
           src={img.src}
           alt={name}
