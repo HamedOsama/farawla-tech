@@ -113,12 +113,12 @@ const page: FC = ({ }) => {
                   <textarea id="message" name="message" rows={4} className="block w-full border-2 border-red-400 shadow-sm text-md sm:text-lg focus:ring-indigo-500 focus:border-indigo-500 rounded-md duration-300" defaultValue={""} />
                 </div>
               </div>
-              <button disabled={isLoading} type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-md sm:text-lg font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+              <button disabled={isLoading} type="submit" className="w-full flex justify-center items-center py-2 px-4 border border-transparent shadow-sm text-md sm:text-lg font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                 {
                   isLoading ?
                     <>
-                      <Loader2 className="animate-spin w-4 h-4" />
                       جاري الإرسال
+                      <Loader2 className="animate-spin w-5 h-5" />
                     </>
                     : 'ارسال'
                 }
