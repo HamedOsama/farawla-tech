@@ -48,9 +48,9 @@ const page: FC = ({ }) => {
           "Content-Type": "application/json",
         },
       });
-      const res = await req.json();
-      console.log(res);
-      if (res === "sent") {
+      console.log(req);
+
+      if (req.ok) {
         toast.success("تم إرسال الرسالة بنجاح");
       }
     } catch (e: any) {
