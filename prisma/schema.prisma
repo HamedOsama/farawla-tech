@@ -8,10 +8,11 @@ generator client {
 datasource db {
   provider     = "mysql"
   url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_URL")
   relationMode = "prisma"
 }
 
-model contact {
+model Contact {
   id        String   @id @default(uuid())
   name      String
   phone     String
