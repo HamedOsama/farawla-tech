@@ -57,7 +57,7 @@ const Solutions = () => {
             className='w-full sm:w-full'
           />
         </span>
-        <SectionTitle>عارفين اللي تاعبك</SectionTitle>
+        <SectionTitle>لماذا فراولة تيك؟</SectionTitle>
       </div>
       <div className="flex-1 flex flex-wrap items-center justify-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {solutions.map((solution, i) => (

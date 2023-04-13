@@ -5,6 +5,7 @@ import img2 from '@assets/problem2.png'
 import img3 from '@assets/problem3.png'
 import img4 from '@assets/problem4.png'
 import Problem from './Problem'
+import SectionTitle from '../SectionTitle'
 
 const Problems = () => {
   const problems = [
@@ -26,7 +27,10 @@ const Problems = () => {
     },
   ]
   return (
-    <section className='bg-white sm:min-h-screen flex items-center justify-center py-8 overflow-hidden'>
+    <section className='bg-white sm:min-h-screen flex flex-col items-center justify-center py-8 overflow-hidden'>
+      <div className="w-full">
+        <SectionTitle>عارفين اللي تاعبك</SectionTitle>
+      </div>
       <div className="grid sm:grid-cols-2 justify-items-center w-1/2 gap-8 sm:gap-8 mx-auto">
         {problems.map((problem, i) => (
           <Problem name={problem.name} img={problem.img} key={i} />
