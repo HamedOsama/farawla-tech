@@ -5,11 +5,11 @@ export async function POST(request: Request) {
   try {
 
 
-    const { name, email, message } = await request.json() as Contact
+    const { name, phone, message } = await request.json() as Contact
     const contact = await prisma.contact.create({
       data: {
         name: name as string,
-        email: email as string,
+        phone: phone as string,
         message: message as string,
       }
 
