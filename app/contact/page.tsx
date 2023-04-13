@@ -3,11 +3,12 @@ import Navbar from '@/components/Navbar'
 import ParticleBg from '@/components/ParticleBg'
 import SectionTitle from '@/components/SectionTitle'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 import contactBackground from '@assets/contact-background.png'
 import Footer from '@/components/Footer'
+import { Loader2 } from 'lucide-react'
 
 interface FormData {
   name: string;
@@ -16,7 +17,9 @@ interface FormData {
 }
 
 const page: FC = ({ }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const submitFormHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget as HTMLFormElement);
@@ -41,6 +44,7 @@ const page: FC = ({ }) => {
     }
 
     try {
+      setIsLoading(true);
       const req = await fetch("/api/contact", {
         method: "POST",
         body: JSON.stringify(data),
@@ -55,6 +59,8 @@ const page: FC = ({ }) => {
       }
     } catch (e: any) {
       toast.error(e?.message || "حدث خطأ ما");
+    } finally {
+      setIsLoading(false);
     }
 
 
@@ -107,8 +113,15 @@ const page: FC = ({ }) => {
                   <textarea id="message" name="message" rows={4} className="block w-full border-2 border-red-400 shadow-sm text-md sm:text-lg focus:ring-indigo-500 focus:border-indigo-500 rounded-md duration-300" defaultValue={""} />
                 </div>
               </div>
-              <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-md sm:text-lg font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                ارسال
+              <button disabled={isLoading} type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent shadow-sm text-md sm:text-lg font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                {
+                  isLoading ?
+                    <>
+                      <Loader2 className="animate-spin w-4 h-4" />
+                      جاري الإرسال
+                    </>
+                    : 'ارسال'
+                }
               </button>
             </form>
           </div>
