@@ -16,6 +16,11 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
+          <Link href="/news" className='text-white'>
+            أخبارنا
+          </Link>
+        </li>
+        <li>
           <Link href="/contact" className='text-white'>
             تواصل معنا
           </Link>
