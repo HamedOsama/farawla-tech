@@ -15,7 +15,7 @@ interface FormData {
   message: string;
 }
 
-const page: FC = ({ }) => {
+const page = ({ params: { lng } }: IParams) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const submitFormHandler = async (e: React.FormEvent<HTMLFormElement>) => {
 
@@ -32,13 +32,23 @@ const page: FC = ({ }) => {
     const { name, phone, message } = data;
 
     if (!name || !phone || !message) {
-      toast.error("الرجاء ملئ جميع الحقول");
+      toast.error(
+        lng === 'ar' ?
+          'الرجاء ملئ جميع الحقول'
+          :
+          'Please fill all fields'
+      );
       return;
     }
 
     const phoneRegexEG = /^(\+?2)?01[0125][0-9]{8}$/;
     if (!phoneRegexEG.test(phone)) {
-      toast.error("رقم الهاتف غير صحيح");
+      toast.error(
+        lng === 'ar' ?
+          'رقم الهاتف غير صحيح'
+          :
+          'Invalid phone number'
+      );
       return;
     }
 
@@ -54,12 +64,22 @@ const page: FC = ({ }) => {
       console.log(req);
 
       if (req.ok) {
-        toast.success("تم إرسال الرسالة بنجاح");
+        toast.success(
+          lng === 'ar' ?
+            'تم ارسال الرسالة بنجاح'
+            :
+            'Message sent successfully'
+        );
         // reset form
         (e.currentTarget as HTMLFormElement).reset();
       }
     } catch (e: any) {
-      toast.error(e?.message || "حدث خطأ ما");
+      toast.error(e?.message ||
+        lng === 'ar' ?
+        'حدث خطأ ما'
+        :
+        'Something went wrong'
+      );
     } finally {
       setIsLoading(false);
     }
@@ -69,7 +89,7 @@ const page: FC = ({ }) => {
   return <main>
     <div className="relative">
       {/* @ts-expect-error Server Component */}
-      <Navbar />
+      <Navbar lng={lng} />
       <ParticleBg />
     </div>
     <section className='min-h-screen relative bg-white'>
@@ -88,12 +108,14 @@ const page: FC = ({ }) => {
       <div className="relative w-full sm:w-4/5 mx-auto py-24  sm:py-32  rounded-md">
         <div className="bg-white px-4 sm:px-6 lg:px-8 pt-2 pb-4 sm:pb-8 rounded-md">
 
-          <SectionTitle>تواصل معنا</SectionTitle>
+          <SectionTitle>
+            {lng === 'ar' ? 'تواصل معنا' : 'Contact Us'}
+          </SectionTitle>
           <div className="mt-12">
             <form onSubmit={submitFormHandler} className="grid grid-cols-1 gap-y-6 sm:gap-x-8 max-w-md mx-auto">
               <div className=''>
                 <label htmlFor="name" className="block text-base sm:text-2xl lg:text-3xl font-medium text-gray-900 ">
-                  الاسم
+                  {lng === 'ar' ? 'الاسم' : 'Name'}
                 </label>
                 <div className="mt-1">
                   <input type="text" name="name" id="name" autoComplete="given-name" className="block w-full border-2 border-red-400 shadow-sm text-md sm:text-lg focus:ring-indigo-500 focus:border-indigo-500 rounded-md duration-300" />
@@ -101,7 +123,7 @@ const page: FC = ({ }) => {
               </div>
               <div className="">
                 <label htmlFor="phone" className="block text-base sm:text-2xl lg:text-3xl font-medium text-gray-900 ">
-                  رقم الهاتف
+                  {lng === 'ar' ? 'رقم الهاتف' : 'Phone'}
                 </label>
                 <div className="mt-1">
                   <input type="number" name="phone" id="phone" autoComplete="given-name" className="block w-full border-2 border-red-400 shadow-sm text-md sm:text-lg focus:ring-indigo-500 focus:border-indigo-500 rounded-md duration-300 " />
@@ -109,7 +131,7 @@ const page: FC = ({ }) => {
               </div>
               <div className="">
                 <label htmlFor="message" className="block text-base sm:text-2xl lg:text-3xl font-medium text-gray-900 ">
-                  الرسالة
+                  {lng === 'ar' ? 'الرسالة' : 'Message'}
                 </label>
                 <div className="mt-1">
                   <textarea id="message" name="message" rows={4} className="block w-full border-2 border-red-400 shadow-sm text-md sm:text-lg focus:ring-indigo-500 focus:border-indigo-500 rounded-md duration-300" defaultValue={""} />
@@ -119,10 +141,13 @@ const page: FC = ({ }) => {
                 {
                   isLoading ?
                     <>
-                      جاري الإرسال
+                      {lng === 'ar' ? 'جاري الارسال' : 'Sending'}
                       <Loader2 className="animate-spin w-5 h-5" />
                     </>
-                    : 'ارسال'
+                    :
+                    <>
+                      {lng === 'ar' ? 'ارسال' : 'Send'}
+                    </>
                 }
               </button>
             </form>
