@@ -1,7 +1,6 @@
 import { useTranslation } from '@/app/i18n'
 import Link from 'next/link'
 import React from 'react'
-import { Trans } from 'react-i18next/TransWithoutContext'
 
 import LangButton from './LangButton'
 
@@ -10,7 +9,7 @@ export default async function Navbar({ lng }: { lng: string }) {
 
   return (
     <nav className="w-full py-12">
-      <ul className='w-full flex items-center justify-between text-lg sm:text-2xl px-2 sm:px-4 md:px-6 lg:px-10 flex-wrap'>
+      <ul className='w-full flex items-center justify-between text-lg sm:text-2xl px-4 sm:px-12 md:px-16 lg:px-20 xl:px-28 flex-wrap'>
         <li>
           <Link href={`/${lng}`} className='text-white'>
             {t('navbar.home')}
@@ -32,10 +31,8 @@ export default async function Navbar({ lng }: { lng: string }) {
           </Link>
         </li>
         <li className='flex flex-col sm:flex-row gap-2'>
-          {/* <Trans i18nKey="languageSwitcher" t={t}> */}
-            <LangButton lng={'ar'} />
-            <LangButton lng={'en'} />
-          {/* </Trans> */}
+          <LangButton lng={'ar'} />
+          <LangButton lng={'en'} />
         </li>
       </ul>
     </nav>
