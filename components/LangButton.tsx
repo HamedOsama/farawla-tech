@@ -34,7 +34,7 @@ const LangButton: FC<LangButtonProps> = ({ lng }) => {
   return <button
     type='button'
     onClick={onClickHandler}
-    className='bg-white text-black  rounded-3xl sm:rounded-md flex items-center gap-1 py-1 px-3 text-xs sm:text-base'>
+    className='bg-white hover:bg-red-600 text-black  rounded-3xl sm:rounded-md flex items-center gap-1 py-1 px-3 text-xs sm:text-base duration-300'>
     <Image src={lng === 'ar' ? ar : en} alt={lng} className='w-5 h-3 sm:w-6 sm:h-6' />
     {lng === 'ar' ? 'العربية' : 'English'}
   </button>

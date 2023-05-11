@@ -11,22 +11,22 @@ export default async function Navbar({ lng }: { lng: string }) {
     <nav className="w-full py-12">
       <ul className='w-full flex items-center justify-between text-lg sm:text-2xl px-4 sm:px-12 md:px-16 lg:px-20 xl:px-28 flex-wrap'>
         <li>
-          <Link href={`/${lng}`} className='text-white'>
+          <Link href={`/${lng}`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.home')}
           </Link>
         </li>
         <li>
-          <Link href={`/${lng}/about`} className='text-white'>
+          <Link href={`/${lng}/about`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.about')}
           </Link>
         </li>
         <li>
-          <Link href={`/${lng}/news`} className='text-white'>
+          <Link href={`/${lng}/news`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.news')}
           </Link>
         </li>
         <li>
-          <Link href={`/${lng}/contact`} className='text-white'>
+          <Link href={`/${lng}/contact`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.contact')}
           </Link>
         </li>
