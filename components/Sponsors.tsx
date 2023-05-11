@@ -77,7 +77,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
                 height={150}
                 sizes='150px'
                 className='w-full transition-all duration-700 ease-in-out'
-                data-aos="fade-up"
+                // data-aos="fade-up"
               />
             </div>)
         })}
