@@ -13,7 +13,7 @@ const page = async ({ params: { lng } }: IParams) => {
     <main>
       <div className="relative">
         {/* @ts-expect-error Server Component */}
-        <Navbar />
+        <Navbar lng={lng}/>
         <ParticleBg />
       </div>
       <AboutUs lng={lng}/>
