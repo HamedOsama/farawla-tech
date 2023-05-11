@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useRef } from 'react'
-import { useInView } from 'framer-motion'
+import React from 'react'
 
 interface ProblemProps {
   name: string
@@ -9,11 +8,8 @@ interface ProblemProps {
 }
 
 const Problem = ({ name, img }: ProblemProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: '5%' });
   return (
     <div
-      ref={ref}
       className='flex flex-col items-center justify-center gap-4 w-full'
     >
       <Image
@@ -23,17 +19,12 @@ const Problem = ({ name, img }: ProblemProps) => {
         height={150}
         sizes='(max-width: 768px) 100vw, 150px'
         className='aspect-square object-contain duration-1000 ease-in-out'
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(250px)',
-        }}
+        data-aos="fade-up"
       />
       <p
         className='text-black text-center text-lg sm:text-2xl duration-1000 delay-100 ease-in-out'
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? 'translateY(0)' : 'translateY(250px)',
-        }}
+        data-aos="fade-up"
+        data-aos-delay="50"
       >
         {name}
       </p>

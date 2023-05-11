@@ -12,7 +12,6 @@ import img5 from '@assets/sponsor5.png'
 import img6 from '@assets/sponsor6.png'
 
 import flower from '@assets/flower.png'
-import { useInView } from 'framer-motion'
 import { useTranslation } from '@/app/i18n/client'
 
 const Sponsors = ({ lng }: { lng: string }) => {
