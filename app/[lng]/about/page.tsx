@@ -11,11 +11,7 @@ import Sponsors from '@/components/Sponsors'
 const page = async ({ params: { lng } }: IParams) => {
   return (
     <main>
-      <div className="relative">
-        {/* @ts-expect-error Server Component */}
-        <Navbar lng={lng}/>
-        <ParticleBg />
-      </div>
+      
       <AboutUs lng={lng}/>
       <Mission lng={lng}/>
       <Vision lng={lng}/>

@@ -11,11 +11,10 @@ import Sponsors from '@/components/Sponsors'
 export default async function Home({ params: { lng } }: IParams) {
   return (
     <main>
-      <section className="relative min-h-[100svh] sm:min-h-screen">
-        <ParticleBg />
-        <div className="absolute inset-0 z-10 flex flex-col">
-          {/* @ts-expect-error Server Component */}
-          <Navbar lng={lng} />
+      <section className="relative min-h-[calc(100svh-152px)] sm:min-h-[calc(100vh-128px)]">
+        <div className="absolute flex flex-col bg-black inset-0 z-10 ">
+          {/* <ParticleBg /> */}
+          {/* <Navbar lng={lng} /> */}
           <HomePageIntro lng={lng} />
         </div>
       </section>
@@ -25,8 +24,8 @@ export default async function Home({ params: { lng } }: IParams) {
       {/* @ts-expect-error Server Component */}
       <Solutions lng={lng} />
       {/* @ts-expect-error Server Component */}
-      <OurTeam lng={lng}/>
-      <Sponsors lng={lng}/>
+      <OurTeam lng={lng} />
+      <Sponsors lng={lng} />
     </main>
   )
 }

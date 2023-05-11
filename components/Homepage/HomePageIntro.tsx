@@ -17,7 +17,7 @@ const HomePageIntro = ({ lng }: { lng: string }) => {
     }
   }
   return (
-    <div className="w-full h-full flex-1 flex flex-col sm:flex-row items-center sm:items-start px-8 md:px-11 lg:px-20 xl:px-32 overflow-hidden">
+    <div className="relative w-full h-full flex-1 flex flex-col sm:flex-row items-center sm:items-start px-8 md:px-11 lg:px-20 xl:px-32 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}

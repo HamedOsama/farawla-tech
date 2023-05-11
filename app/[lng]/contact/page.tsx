@@ -87,11 +87,6 @@ const page = ({ params: { lng } }: IParams) => {
 
   }
   return <main>
-    <div className="relative">
-      {/* @ts-expect-error Server Component */}
-      <Navbar lng={lng} />
-      <ParticleBg />
-    </div>
     <section className='min-h-screen relative bg-white'>
       <div className="absolute inset-0">
         <Image

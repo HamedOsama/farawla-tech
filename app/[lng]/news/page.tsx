@@ -14,11 +14,7 @@ const page = async ({ params: { lng } }: IParams) => {
   const { t } = await useTranslation(lng)
 
   return <main className='flex flex-col'>
-    <div className="relative">
-      {/* @ts-expect-error Server Component */}
-      <Navbar lng={lng} />
-      <ParticleBg />
-    </div>
+    
     <div className="bg-white relative w-full py-8 sm:py-16">
       <div className="flex-1 w-10/12 sm:3/4 mx-auto flex flex-col gap-6 sm:gap-12">
         <div className="grid sm:grid-cols-2 gap-4 items-center justify-items-center">

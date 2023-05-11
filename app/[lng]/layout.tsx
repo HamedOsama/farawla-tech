@@ -5,6 +5,8 @@ import '../globals.css'
 import { Lalezar } from 'next/font/google'
 import { languages } from '../i18n/settings'
 import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import ParticleBg from '@/components/ParticleBg'
 
 export const metadata = {
   title: 'Create Next App',
@@ -39,6 +41,11 @@ export default function RootLayout({
     <html lang={lng} dir={dir(lng)} className={font.className}>
       <body >
         <ToastProvider />
+        <div className="relative">
+          {/* @ts-expect-error Server Component */}
+          <Navbar lng={lng} />
+          <ParticleBg />
+        </div>
         {children}
         {/* @ts-expect-error Server Component */}
         <Footer lng={lng} />
