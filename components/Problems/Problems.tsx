@@ -6,30 +6,33 @@ import img3 from '@assets/problem3.png'
 import img4 from '@assets/problem4.png'
 import Problem from './Problem'
 import SectionTitle from '../SectionTitle'
+import { useTranslation } from '@/app/i18n'
 
-const Problems = () => {
+const Problems = async ({ lng }: { lng: string }) => {
+  const { t } = await useTranslation(lng)
+
   const problems = [
     {
-      name: 'الأرض ملحت ومبقتش تجيب خير زي الأول',
+      name: t('problem1'),
       img: img1,
     },
     {
-      name: 'العنكبوت الأحمر والدودة والتربس ماليين الأرض',
+      name: t('problem2'),
       img: img2,
     },
     {
-      name: 'االمناخ اتغير والشبورة والحر تعبينك',
+      name: t('problem3'),
       img: img3,
     },
     {
-      name: 'يومية العمال زادت والناس بطلت تشتغل ف الأرض',
+      name: t('problem4'),
       img: img4,
     },
   ]
   return (
     <section className='bg-white sm:min-h-screen flex flex-col items-center justify-center py-8 overflow-hidden'>
       <div className="w-full">
-        <SectionTitle>عارفين اللي تاعبك</SectionTitle>
+        <SectionTitle>{t('problemsTitle')}</SectionTitle>
       </div>
       <div className="grid sm:grid-cols-2 justify-items-center w-1/2 gap-8 sm:gap-8 mx-auto">
         {problems.map((problem, i) => (

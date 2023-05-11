@@ -9,17 +9,19 @@ import OurTeam from '@/components/OurTeam/OurTeam'
 import Sponsors from '@/components/Sponsors'
 import Footer from '@/components/Footer'
 
-export default function Home() {
+export default async function Home({ params: { lng } }: IParams) {
   return (
     <main>
       <section className="relative min-h-[100svh] sm:min-h-screen">
         <ParticleBg />
         <div className="absolute inset-0 z-10 flex flex-col">
-          <Navbar />
-          <HomePageIntro />
+          {/* @ts-expect-error Server Component */}
+          <Navbar lng={lng} />
+          <HomePageIntro lng={lng} />
         </div>
       </section>
-      <Problems />
+      {/* @ts-expect-error Server Component */}
+      <Problems lng={lng}/>
       <Offer />
       <Solutions />
       <OurTeam />

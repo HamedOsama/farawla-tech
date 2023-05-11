@@ -4,8 +4,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import logo from '@assets/logo.png'
+import { useTranslation } from '@/app/i18n/client'
 
-const HomePageIntro = () => {
+const HomePageIntro = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng)
+
   const scrollToHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     const element = document.querySelector('.solutions');
@@ -36,8 +39,12 @@ const HomePageIntro = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.25 }}
         className="h-full grid justify-items-center content-center gap-10 w-full sm:w-3/5">
-        <p className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>في زرعك اللي يهمك إحنا في ظهرك ولا يهمك</p>
-        <button onClick={scrollToHandler} type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>حلول فرولةتيك</button>
+        <p className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>
+          {t('pageIntro')}
+        </p>
+        <button onClick={scrollToHandler} type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>
+          {t('pageIntroBtn')}
+        </button>
       </motion.div>
     </div>
   )

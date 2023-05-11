@@ -13,6 +13,7 @@ const page = () => {
   return (
     <main>
       <div className="relative">
+        {/* @ts-expect-error Server Component */}
         <Navbar />
         <ParticleBg />
       </div>
