@@ -8,7 +8,7 @@ import OurTeam from '@/components/OurTeam/OurTeam'
 import ParticleBg from '@/components/ParticleBg'
 import Sponsors from '@/components/Sponsors'
 
-const page = () => {
+const page = async ({ params: { lng } }: IParams) => {
   return (
     <main>
       <div className="relative">
@@ -16,11 +16,12 @@ const page = () => {
         <Navbar />
         <ParticleBg />
       </div>
-      <AboutUs />
-      <Mission />
-      <Vision />
-      <OurTeam />
-      <Sponsors />
+      <AboutUs lng={lng}/>
+      <Mission lng={lng}/>
+      <Vision lng={lng}/>
+      {/* @ts-expect-error Server Component */}
+      <OurTeam lng={lng} />
+      <Sponsors lng={lng} />
     </main>
   )
 }

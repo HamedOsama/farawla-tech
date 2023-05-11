@@ -48,5 +48,16 @@
     "faculty": "Master's student at Plant Pathology Dept.",
     "university": "Banha University"
   },
-  "sponsors" : "Supporters"
+  "sponsors" : "Supporters",
+  "AboutUs":{
+    "title" : "About Us",
+    "des" : "The Beginning: The idea journey was launched by the CARES Center at the American University in Cairo, in a program to support the capabilities of workers in the agricultural field, sponsored by HSBC Bank."
+  },
+  "mission":{
+    "title" : "Our Goal",
+    "des" : "We seek to design and implement soilless cultivation systems for the production of strawberries for strawberry farmers, systems that follow precession agriculture technique that aim to provide optimal and accurate plant needs in the right timings of fertilizers and water, which works to reduce production costs, relying on measuring and technical matching tools such as The sensors also aim to secure agricultural investment and protect it from pest risks and reduce the negative effects of climate change. And that is by providing deep knowledge by a specialized and expert team to maximize profitability, God willing"
+  },"vision":{
+    "title" : "Our Vision",
+    "des" : "We seek to improve the management of local resources and preserve their use by reducing the consumption of local resources such as water in the production of export crops such as strawberries, and preserving the soil from negative practices such as monoculture and over-fertilization that depletes soil fertility and quality. Let us work to improve the conditions of workers in the local community in the agricultural sector"
+  }
 }
