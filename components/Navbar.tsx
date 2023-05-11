@@ -1,6 +1,8 @@
 import { useTranslation } from '@/app/i18n'
 import Link from 'next/link'
 import React from 'react'
+import { Trans } from 'react-i18next/TransWithoutContext'
+
 import LangButton from './LangButton'
 
 export default async function Navbar({ lng }: { lng: string }) {
@@ -30,8 +32,10 @@ export default async function Navbar({ lng }: { lng: string }) {
           </Link>
         </li>
         <li className='flex flex-col sm:flex-row gap-2'>
-          <LangButton lng={'ar'} />
-          <LangButton lng={'en'} />
+          {/* <Trans i18nKey="languageSwitcher" t={t}> */}
+            <LangButton lng={'ar'} />
+            <LangButton lng={'en'} />
+          {/* </Trans> */}
         </li>
       </ul>
     </nav>

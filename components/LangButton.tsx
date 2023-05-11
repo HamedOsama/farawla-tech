@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { FC } from 'react'
-import { Trans } from 'react-i18next/TransWithoutContext'
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -28,14 +27,17 @@ const LangButton: FC<LangButtonProps> = ({ lng }) => {
   if (!isLang) {
     href += `/${path[path.length - 1]}`
   }
-  return <Trans i18nKey="languageSwitcher" >
-    <Link
-      href={href}
-      className='bg-white text-black  rounded-3xl sm:rounded-md flex items-center gap-1 py-1 px-3 text-xs sm:text-base'>
-      <Image src={lng === 'ar' ? ar : en} alt={lng} className='w-5 h-3 sm:w-6 sm:h-6' />
-      {lng === 'ar' ? 'العربية' : 'English'}
-    </Link>
-  </Trans>
+  const onClickHandler = () => {
+    router.push(href)
+    router.refresh()
+  }
+  return <button
+    type='button'
+    onClick={onClickHandler}
+    className='bg-white text-black  rounded-3xl sm:rounded-md flex items-center gap-1 py-1 px-3 text-xs sm:text-base'>
+    <Image src={lng === 'ar' ? ar : en} alt={lng} className='w-5 h-3 sm:w-6 sm:h-6' />
+    {lng === 'ar' ? 'العربية' : 'English'}
+  </button>
 }
 
 export default LangButton
