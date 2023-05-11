@@ -9,7 +9,7 @@ export default async function Navbar({ lng }: { lng: string }) {
 
   return (
     <nav className="w-full py-12">
-      <ul className='w-4/5 sm:w-full mx-auto flex items-center justify-between text-lg sm:text-2xl px-4 sm:px-12 md:px-16 lg:px-20 xl:px-28 flex-wrap'>
+      <ul className='w-4/5 sm:w-full mx-auto flex items-center justify-between gap-4 text-lg sm:text-2xl px-4 sm:px-12 md:px-16 lg:px-20 xl:px-28 flex-wrap'>
         <li>
           <Link href={`/${lng}`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.home')}
