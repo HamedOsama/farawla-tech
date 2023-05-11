@@ -11,8 +11,8 @@ import Sponsors from '@/components/Sponsors'
 export default async function Home({ params: { lng } }: IParams) {
   return (
     <main>
-      <section className="relative min-h-[calc(100svh-152px)] sm:min-h-[calc(100vh-128px)]">
-        <div className="absolute flex flex-col bg-black inset-0 z-10 ">
+      <section className="relative">
+        <div className="w-full h-full min-h-[calc(100svh-152px)] sm:min-h-[calc(100vh-128px)]">
           {/* <ParticleBg /> */}
           {/* <Navbar lng={lng} /> */}
           <HomePageIntro lng={lng} />

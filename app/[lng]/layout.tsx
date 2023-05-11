@@ -41,10 +41,10 @@ export default function RootLayout({
     <html lang={lng} dir={dir(lng)} className={font.className}>
       <body >
         <ToastProvider />
+        <ParticleBg />
         <div className="relative">
           {/* @ts-expect-error Server Component */}
           <Navbar lng={lng} />
-          <ParticleBg />
         </div>
         {children}
         {/* @ts-expect-error Server Component */}
