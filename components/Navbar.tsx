@@ -1,13 +1,14 @@
 import { useTranslation } from '@/app/i18n'
 import Link from 'next/link'
 import React from 'react'
+import LangButton from './LangButton'
 
 export default async function Navbar({ lng }: { lng: string }) {
   const { t } = await useTranslation(lng)
 
   return (
     <nav className="w-full py-12">
-      <ul className='w-full flex items-center justify-center gap-12 sm:gap-24 md:gap-36 lg:gap-48 text-lg sm:text-2xl'>
+      <ul className='w-full flex items-center justify-between text-lg sm:text-2xl px-2 sm:px-4 md:px-6 lg:px-10 flex-wrap'>
         <li>
           <Link href={`/${lng}`} className='text-white'>
             {t('navbar.home')}
@@ -27,6 +28,10 @@ export default async function Navbar({ lng }: { lng: string }) {
           <Link href={`/${lng}/contact`} className='text-white'>
             {t('navbar.contact')}
           </Link>
+        </li>
+        <li className='flex flex-col sm:flex-row gap-2'>
+          <LangButton lng={'ar'} />
+          <LangButton lng={'en'} />
         </li>
       </ul>
     </nav>
