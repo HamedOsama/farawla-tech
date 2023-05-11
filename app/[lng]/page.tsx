@@ -26,7 +26,7 @@ export default async function Home({ params: { lng } }: IParams) {
       <Solutions lng={lng} />
       {/* @ts-expect-error Server Component */}
       <OurTeam lng={lng}/>
-      <Sponsors />
+      <Sponsors lng={lng}/>
     </main>
   )
 }
