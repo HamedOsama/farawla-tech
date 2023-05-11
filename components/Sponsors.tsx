@@ -35,7 +35,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
       alt: 'Orange Corners',
     },
     {
-      img : img5,
+      img: img5,
       alt: 'ABA',
     },
     {
@@ -67,7 +67,6 @@ const Sponsors = ({ lng }: { lng: string }) => {
             <div
               key={i}
               className='w-full h-full flex items-center justify-center'
-              data-aos="fade-up"
             >
               <Image
                 src={el.img.src}
@@ -78,6 +77,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
                 height={150}
                 sizes='150px'
                 className='w-full transition-all duration-700 ease-in-out'
+                data-aos="fade-up"
               />
             </div>)
         })}
