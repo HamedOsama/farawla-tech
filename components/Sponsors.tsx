@@ -8,6 +8,9 @@ import img1 from '@assets/sponsor1.png'
 import img2 from '@assets/sponsor2.png'
 import img3 from '@assets/sponsor3.png'
 import img4 from '@assets/sponsor4.png'
+import img5 from '@assets/sponsor5.png'
+import img6 from '@assets/sponsor6.png'
+
 import flower from '@assets/flower.png'
 import { useInView } from 'framer-motion'
 import { useTranslation } from '@/app/i18n/client'
@@ -31,6 +34,14 @@ const Sponsors = ({ lng }: { lng: string }) => {
     {
       img: img4,
       alt: 'Orange Corners',
+    },
+    {
+      img : img5,
+      alt: 'ABA',
+    },
+    {
+      img: img6,
+      alt: 'Next Food',
     }
   ]
 
@@ -51,7 +62,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
         </span>
         <SectionTitle>{t('sponsors')}</SectionTitle>
       </div>
-      <div className="flex-1 grid md:grid-cols-4 items-center justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
+      <div className="flex-1 grid md:grid-cols-4 items-center justify-items-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {sponsorImages.map((el, i) => {
           const ref = React.useRef<HTMLDivElement>(null)
           const isInView = useInView(ref, { once: false, margin: '-50px' })
