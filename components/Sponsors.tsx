@@ -10,8 +10,11 @@ import img3 from '@assets/sponsor3.png'
 import img4 from '@assets/sponsor4.png'
 import flower from '@assets/flower.png'
 import { useInView } from 'framer-motion'
+import { useTranslation } from '@/app/i18n/client'
 
-const Sponsors = () => {
+const Sponsors = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng)
+
   const sponsorImages = [
     {
       img: img1,
@@ -46,7 +49,7 @@ const Sponsors = () => {
             className='w-full sm:w-full'
           />
         </span>
-        <SectionTitle>الجهات الداعمة</SectionTitle>
+        <SectionTitle>{t('sponsors')}</SectionTitle>
       </div>
       <div className="flex-1 grid md:grid-cols-4 items-center justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {sponsorImages.map((el, i) => {

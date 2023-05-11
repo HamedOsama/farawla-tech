@@ -10,37 +10,39 @@ import img2 from '@assets/member2.png'
 import img3 from '@assets/member3.png'
 import img4 from '@assets/member4.png'
 import flower from '@assets/flower.png'
+import { useTranslation } from '@/app/i18n'
 
-const OurTeam = () => {
+const OurTeam = async ({ lng }: { lng: string }) => {
+  const { t } = await useTranslation(lng)
   const members = [
     {
-      name: 'أحمد رمضان عوف',
-      position: 'المدير التنفيذي ومطور الأعمال',
-      faculty: 'بكالوريوس الهندسة الزراعي',
-      university: 'جامعة بنها',
+      name: t('AhmedOuf.name'),
+      position: t('AhmedOuf.position'),
+      faculty: t('AhmedOuf.faculty'),
+      university: t('AhmedOuf.university'),
       img: img1,
     },
     {
-      name: 'محمد حافظ',
-      position: 'مطور المنتجات وعمليات التشغيل',
-      faculty: 'دكتوراة كيمياء الأراضي',
-      university: 'جامعة باري ألدو مورو إيطاليا',
-      img: img2,
-    },
-    {
-      name: 'أحمد النجار',
-      position: 'مطور المنتجات و عمليات التشغيل',
-      faculty: 'دكتوراة معهد الري الدقيق',
-      university: 'جامعة ماسي نيوزلندا',
+      name: t('AhmedELnagar.name'),
+      position: t('AhmedELnagar.position'),
+      faculty: t('AhmedELnagar.faculty'),
+      university: t('AhmedELnagar.university'),
       img: img3,
     },
     {
-      name: 'حمادة عبد الرحمن',
-      position: 'مطور عمليات التشغيل',
-      faculty: 'ماجستير أمراض النبات',
-      university: 'جامعة بنها',
+      name: t('HamadaAbdelrahman.name'),
+      position: t('HamadaAbdelrahman.position'),
+      faculty: t('HamadaAbdelrahman.faculty'),
+      university: t('HamadaAbdelrahman.university'),
       img: img4,
-    }
+    },
+    {
+      name: t('MohamedHafez.name'),
+      position: t('MohamedHafez.position'),
+      faculty: t('MohamedHafez.faculty'),
+      university: t('MohamedHafez.university'),
+      img: img2,
+    },
   ]
 
   return (
@@ -58,7 +60,7 @@ const OurTeam = () => {
             className='w-full sm:w-full'
           />
         </span>
-        <SectionTitle>فريق العمل</SectionTitle>
+        <SectionTitle>{t('ourTeamTitle')}</SectionTitle>
       </div>
       <div className="flex-1 grid md:grid-cols-4 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {members.map((solution, i) => (

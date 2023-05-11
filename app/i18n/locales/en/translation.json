@@ -14,5 +14,39 @@
   "news1" : "The idea of farawlaTech won first place in the project competition in the capacity building program for professionals working in the field of agriculture at the Center for Applied Research in Environment and Sustainability (CARES) at the American University in Cairo, sponsored by HSPC Bank and with financial support of 50,000 Egyptian pounds",
   "news2" : "alhamdulillah, our journey in the training program at the Entrepreneurship Center for Social Impact at Heliopolis University for Sustainable Development in Cairo ended, with winning the third place for the idea (farawlatech) and financial support of 2000 euros",
   "news3" : "alhamdulillah , farawlaTech won in competition in journey  GIMED programe incubator and and financial support of 7500 euros GIMED  aims at boosting the development of eco-innovative ventures in order to create employment and drive the green and circular economy in the Mediterranean. The project will implement a United Nations-backed ‘Green Entrepreneurship Standard’",
-  "news4" : "That will standardise the supportive inputs needed to generate successful ventures and  will give those ventures a mark of quality to better access finance and markets. On the ground, the project will train and coach eco-innovators and encourage financiers to invest in the Mediterranean eco-innovation sector"
+  "news4" : "That will standardise the supportive inputs needed to generate successful ventures and  will give those ventures a mark of quality to better access finance and markets. On the ground, the project will train and coach eco-innovators and encourage financiers to invest in the Mediterranean eco-innovation sector",
+  "offerTitle" : "What Farwlatech offers you",
+  "offerDes" : "Design and implementation of soilless cultivation systems for the production of high-tech strawberries based on the precision cultivation system",
+  "solutionTitle" : "Why Farwlatech ?",
+  "solution1" : "use the specialized fertilizer for strawberry",
+  "solution2" : "use innocative local media",
+  "solution3" : "schedule irrigation with high technology",
+  "solution4" : "increase cycles production in season",
+  "solution5" : "Improving working conditions and improving income",
+  "ourTeamTitle" : "Team Members",
+  "AhmedOuf" : {
+    "name": "Ahmed Ramadan ouf",
+    "position": "Founder & CEO",
+    "faculty": "BA of agriculture engineering",
+    "university": "Banha University"
+  },
+  "AhmedELnagar" : {
+    "name": "Ahmed El-Naggar",
+    "position": "Co-Founder",
+    "faculty": "Ph.D Precision Irrigation Science Institute of Agriculture",
+    "university": "Massey University"
+  },
+  "HamadaAbdelrahman" : {
+    "name": "Hamada Abdulrahman",
+    "position": "Co-Founder",
+    "faculty": "BariUniversità degli Studi di BariPhD , Soil ChemistryPhD",
+    "university": "Banha University"
+  },
+  "MohamedHafez": {
+    "name": "Mohamed Hafez",
+    "position": "Co-Founder",
+    "faculty": "Master's student at Plant Pathology Dept.",
+    "university": "Banha University"
+  },
+  "sponsors" : "Supporters"
 }

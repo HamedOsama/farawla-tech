@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import ParticleBg from '@/components/ParticleBg'
 import Image from 'next/image'
@@ -91,7 +90,6 @@ const page = async ({ params: { lng } }: IParams) => {
       </div>
     </div>
 
-    <Footer />
   </main>
 }
 

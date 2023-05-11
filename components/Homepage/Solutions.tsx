@@ -11,26 +11,30 @@ import abBg from '@assets/solution-after.png'
 import Problem from '../Problems/Problem'
 import Image from 'next/image'
 import SectionTitle from '../SectionTitle'
-const Solutions = () => {
+import { useTranslation } from '@/app/i18n'
+
+const Solutions = async ({ lng }: { lng: string }) => {
+  const { t } = await useTranslation(lng)
+
   const solutions = [
     {
-      name: 'بنستخدم برامج تسميد مخصصة للفراولة المزروعة بدون تربة',
+      name: t('solution1'),
       img: img1,
     },
     {
-      name: 'هتروي زرعك بدقة عالية من خلال التكنولوجيا',
+      name: t('solution2'),
       img: img2,
     },
     {
-      name: 'بنستخدم بدائل تربة محلية بنسبة 100%',
+      name: t('solution3'),
       img: img3,
     },
     {
-      name: 'ممكن تشتغل موسمين في السنة لو شغال في الصوبة',
+      name: t('solution4'),
       img: img4,
     },
     {
-      name: 'ظروف شغل العمال أفضل ، وهتنجز أكتر',
+      name: t('solution5'),
       img: img5,
     }
   ]
@@ -57,7 +61,7 @@ const Solutions = () => {
             className='w-full sm:w-full'
           />
         </span>
-        <SectionTitle>لماذا فراولة تيك؟</SectionTitle>
+        <SectionTitle>{t('solutionTitle')}</SectionTitle>
       </div>
       <div className="flex-1 flex flex-wrap items-center justify-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {solutions.map((solution, i) => (

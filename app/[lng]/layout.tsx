@@ -4,6 +4,7 @@ import '../globals.css'
 
 import { Lalezar } from 'next/font/google'
 import { languages } from '../i18n/settings'
+import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,7 +15,7 @@ const font = Lalezar({
   weight: ["400"],
   preload: true,
   variable: '--font-lalezar',
-  subsets: ['arabic','latin'],
+  subsets: ['arabic', 'latin'],
   display: 'swap'
 })
 
@@ -39,6 +40,8 @@ export default function RootLayout({
       <body >
         <ToastProvider />
         {children}
+        {/* @ts-expect-error Server Component */}
+        <Footer lng={lng} />
       </body>
     </html>
   )

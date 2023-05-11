@@ -4,14 +4,17 @@ import logo from '@assets/logo.png'
 import Image from 'next/image'
 import Facebook from './Icons/Facebook'
 import ParticleBg from './ParticleBg'
-const Footer = () => {
+import { useTranslation } from '@/app/i18n'
+const Footer = async ({ lng }: { lng: string }) => {
+  const { t } = await useTranslation(lng)
+
   return (
     <footer className='relative py-4 sm:py-6 overflow-hidden  -z-50 bg-black'>
       <div className="py-4 sm:py-12 flex items-center justify-center md:justify-start px-8 gap-4">
         <div className="w-6 md:w-20">
           <Image
             src={logo.src}
-            alt="Farawla Tech"
+            alt={t('title')}
             blurDataURL={logo.src}
             placeholder='blur'
             width={82}
@@ -20,7 +23,9 @@ const Footer = () => {
             className='w-full'
           />
         </div>
-        <p className='text-white text-center text-2xl sm:text-4xl'>فراولة تيك</p>
+        <p className='text-white text-center text-2xl sm:text-4xl'>
+          {t('title')}
+        </p>
         <div className="">
           <Facebook />
         </div>

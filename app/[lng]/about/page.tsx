@@ -3,7 +3,6 @@ import React from 'react'
 import AboutUs from '@/components/About/AboutUs'
 import Mission from '@/components/About/Mission'
 import Vision from '@/components/About/Vision'
-import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import OurTeam from '@/components/OurTeam/OurTeam'
 import ParticleBg from '@/components/ParticleBg'
@@ -22,7 +21,6 @@ const page = () => {
       <Vision />
       <OurTeam />
       <Sponsors />
-      <Footer />
     </main>
   )
 }

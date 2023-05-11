@@ -7,7 +7,6 @@ import Offer from '@/components/Homepage/Offer'
 import Solutions from '@/components/Homepage/Solutions'
 import OurTeam from '@/components/OurTeam/OurTeam'
 import Sponsors from '@/components/Sponsors'
-import Footer from '@/components/Footer'
 
 export default async function Home({ params: { lng } }: IParams) {
   return (
@@ -21,12 +20,13 @@ export default async function Home({ params: { lng } }: IParams) {
         </div>
       </section>
       {/* @ts-expect-error Server Component */}
-      <Problems lng={lng}/>
-      <Offer />
-      <Solutions />
-      <OurTeam />
+      <Problems lng={lng} />
+      <Offer lng={lng} />
+      {/* @ts-expect-error Server Component */}
+      <Solutions lng={lng} />
+      {/* @ts-expect-error Server Component */}
+      <OurTeam lng={lng}/>
       <Sponsors />
-      <Footer />
     </main>
   )
 }

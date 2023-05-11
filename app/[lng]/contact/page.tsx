@@ -7,7 +7,6 @@ import { FC, useState } from 'react'
 import { toast } from 'react-hot-toast'
 
 import contactBackground from '@assets/contact-background.png'
-import Footer from '@/components/Footer'
 import { Loader2 } from 'lucide-react'
 
 interface FormData {
@@ -132,7 +131,6 @@ const page: FC = ({ }) => {
       </div>
 
     </section>
-    <Footer />
   </main>
 }
 
