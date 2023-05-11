@@ -46,8 +46,8 @@ const Sponsors = ({ lng }: { lng: string }) => {
 
   return (
     <section className='relative bg-white flex flex-col items-center justify-center py-2 sm:py-10 lg:py-20'>
-      <div className="relative w-full flex justify-center md:justify-start md:px-32">
-        <span className='absolute top-1/2 -right-5 md:-right-14 -translate-y-1/2 rotate-180'>
+      <div className="w-full flex justify-center md:justify-start md:px-32">
+        {/* <span className='absolute top-1/2 -right-5 md:-right-14 -translate-y-1/2 rotate-180'>
           <Image
             src={flower.src}
             alt="Farawla Tech"
@@ -58,7 +58,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
             sizes='(max-width: 768px) 100px, 200px'
             className='w-full sm:w-full'
           />
-        </span>
+        </span> */}
         <SectionTitle>{t('sponsors')}</SectionTitle>
       </div>
       <div className="flex-1 grid md:grid-cols-4 items-center justify-items-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
