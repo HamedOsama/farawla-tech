@@ -7,6 +7,10 @@ import { languages } from '../i18n/settings'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import ParticleBg from '@/components/ParticleBg'
+// import AOSWrapper from '@/components/AOSWrapper'
+
+import 'aos/dist/aos.css'
+import AOSWrapper from '@/components/AOSWrapper'
 
 export const metadata = {
   title: 'Create Next App',
@@ -42,6 +46,7 @@ export default function RootLayout({
       <body >
         <ToastProvider />
         <ParticleBg />
+        <AOSWrapper />
         <div className="relative">
           {/* @ts-expect-error Server Component */}
           <Navbar lng={lng} />

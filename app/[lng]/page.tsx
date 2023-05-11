@@ -8,6 +8,9 @@ import Solutions from '@/components/Homepage/Solutions'
 import OurTeam from '@/components/OurTeam/OurTeam'
 import Sponsors from '@/components/Sponsors'
 
+export const metadata = {
+  title: 'Home'
+}
 export default async function Home({ params: { lng } }: IParams) {
   return (
     <main>

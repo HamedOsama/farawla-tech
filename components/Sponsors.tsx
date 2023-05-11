@@ -64,13 +64,11 @@ const Sponsors = ({ lng }: { lng: string }) => {
       </div>
       <div className="flex-1 grid md:grid-cols-4 items-center justify-items-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {sponsorImages.map((el, i) => {
-          const ref = React.useRef<HTMLDivElement>(null)
-          const isInView = useInView(ref, { once: false, margin: '-50px' })
           return (
             <div
               key={i}
-              ref={ref}
               className='w-full h-full flex items-center justify-center'
+              data-aos="fade-up"
             >
               <Image
                 src={el.img.src}
@@ -81,10 +79,6 @@ const Sponsors = ({ lng }: { lng: string }) => {
                 height={150}
                 sizes='150px'
                 className='w-full transition-all duration-700 ease-in-out'
-                style={{
-                  opacity: isInView ? 1 : 0,
-                  transform: isInView ? 'translateY(0)' : 'translateY(150%)',
-                }}
               />
             </div>)
         })}
