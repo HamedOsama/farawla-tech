@@ -45,7 +45,7 @@ const Sponsors = ({ lng }: { lng: string }) => {
   ]
 
   return (
-    <section className='relative bg-white flex flex-col items-center justify-center py-10 lg:py-20 overflow-hidden'>
+    <section className='relative bg-white flex flex-col items-center justify-center py-10 lg:py-20'>
       <div className="relative w-full flex justify-center md:justify-start md:px-32">
         <span className='absolute top-1/2 -right-5 md:-right-14 -translate-y-1/2 rotate-180'>
           <Image
