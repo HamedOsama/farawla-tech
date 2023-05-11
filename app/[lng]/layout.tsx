@@ -43,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lng} dir={dir(lng)} className={font.className}>
-      <body >
+      <body className='overflow-x-hidden'>
         <ToastProvider />
         <ParticleBg />
         <AOSWrapper />
