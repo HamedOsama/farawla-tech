@@ -19,12 +19,12 @@ const Sponsors = ({ lng }: { lng: string }) => {
 
   const sponsorImages = [
     {
-      img: img1,
-      alt: 'Heliopolis University',
-    },
-    {
       img: img2,
       alt: 'The American University in Cairo',
+    },
+    {
+      img: img1,
+      alt: 'Heliopolis University',
     },
     {
       img: img3,
