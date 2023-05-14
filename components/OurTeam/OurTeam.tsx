@@ -30,18 +30,18 @@ const OurTeam = async ({ lng }: { lng: string }) => {
       img: img3,
     },
     {
-      name: t('MohamedHafez.name'),
-      position: t('MohamedHafez.position'),
-      faculty: t('MohamedHafez.faculty'),
-      university: t('MohamedHafez.university'),
-      img: img2,
-    },
-    {
       name: t('HamadaAbdelrahman.name'),
       position: t('HamadaAbdelrahman.position'),
       faculty: t('HamadaAbdelrahman.faculty'),
       university: t('HamadaAbdelrahman.university'),
       img: img4,
+    },
+    {
+      name: t('MohamedHafez.name'),
+      position: t('MohamedHafez.position'),
+      faculty: t('MohamedHafez.faculty'),
+      university: t('MohamedHafez.university'),
+      img: img2,
     },
   ]
 
