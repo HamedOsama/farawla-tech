@@ -64,7 +64,7 @@ const OurTeam = async ({ lng }: { lng: string }) => {
       </div>
       <div className="flex-1 grid md:grid-cols-4 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {members.map((solution, i) => (
-          <div className={`w-full md:order-${10 - i} `} key={i}>
+          <div className={`w-full md:order-${5 - i} `} key={i}>
             <Member
               name={solution.name}
               position={solution.position}
