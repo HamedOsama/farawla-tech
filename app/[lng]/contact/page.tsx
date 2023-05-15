@@ -71,7 +71,7 @@ const page = ({ params: { lng } }: IParams) => {
             'Message sent successfully'
         );
         // reset form
-        (e.currentTarget as HTMLFormElement).reset();
+        (e.target as HTMLFormElement).reset()
       }
     } catch (e: any) {
       toast.error(e?.message ||
