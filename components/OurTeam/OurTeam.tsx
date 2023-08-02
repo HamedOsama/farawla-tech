@@ -30,13 +30,6 @@ const OurTeam = async ({ lng }: { lng: string }) => {
       img: img3,
     },
     {
-      name: t('HamadaAbdelrahman.name'),
-      position: t('HamadaAbdelrahman.position'),
-      faculty: t('HamadaAbdelrahman.faculty'),
-      university: t('HamadaAbdelrahman.university'),
-      img: img4,
-    },
-    {
       name: t('MohamedHafez.name'),
       position: t('MohamedHafez.position'),
       faculty: t('MohamedHafez.faculty'),
@@ -62,7 +55,7 @@ const OurTeam = async ({ lng }: { lng: string }) => {
         </span>
         <SectionTitle>{t('ourTeamTitle')}</SectionTitle>
       </div>
-      <div className="flex-1 grid md:grid-cols-4 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
+      <div className="flex-1 grid md:grid-cols-3 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {members.map((solution, i) => (
           <div className={`w-full md:order-${5 - i} `} key={i}>
             <Member
