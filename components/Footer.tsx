@@ -30,7 +30,7 @@ const Footer = async ({ lng }: { lng: string }) => {
           <Facebook />
         </div>
       </div>
-      <p className=' text-white text-center'>كل الحقوق محفوطة فراولة تيك  &copy; 2023</p>
+      <p className=' text-white text-center'>{lng === "ar"?`كل الحقوق محفوطة فراولة تيك  `: `all right reserved FARAWLA TECH `}<span> 2023</span></p>
     </footer>
   )
 }
