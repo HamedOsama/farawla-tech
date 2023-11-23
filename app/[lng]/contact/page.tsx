@@ -61,7 +61,6 @@ const page = ({ params: { lng } }: IParams) => {
           "Content-Type": "application/json",
         },
       });
-      console.log(req);
 
       if (req.ok) {
         toast.success(

@@ -26,6 +26,11 @@ export default async function Navbar({ lng }: { lng: string }) {
           </Link>
         </li>
         <li>
+          <Link href={`/${lng}/blogs`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
+            {t('navbar.blogs')}
+          </Link>
+        </li>
+        <li>
           <Link href={`/${lng}/contact`} className='text-white hover:text-red-600 cursor-pointer duration-300'>
             {t('navbar.contact')}
           </Link>
