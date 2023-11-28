@@ -61,12 +61,12 @@ const Sponsors = ({ lng }: { lng: string }) => {
         </span> */}
         <SectionTitle>{t('sponsors')}</SectionTitle>
       </div>
-      <div className="flex-1 grid md:grid-cols-4 items-center justify-items-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
+      <div className="relative flex-1 grid md:grid-cols-4 items-center justify-items-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
         {sponsorImages.map((el, i) => {
           return (
             <div
               key={i}
-              className='w-full h-full flex items-center justify-center'
+              className='relative w-full h-full flex items-center justify-center'
             >
               <Image
                 src={el.img.src}

@@ -25,9 +25,9 @@ const LangButton: FC<LangButtonProps> = ({ lng }) => {
   const isLang = rejected.includes(path[path.length - 1])
   // if it is not a language, add the last part of the path to the href
   if (!isLang) {
-    if(path.includes('blogs'))
+    if(path.includes('blogs') && path.length > 3){
     href += `/blogs/${path[path.length - 1]}`
-    else
+    }else
     href += `/${path[path.length - 1]}`
   }
   const onClickHandler = () => {
