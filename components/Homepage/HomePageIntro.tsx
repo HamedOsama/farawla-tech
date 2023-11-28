@@ -4,10 +4,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import logo from '@assets/logo.png'
-import { useTranslation } from '@/app/i18n/client'
+import { useTranslation } from '@/app/i18n'
 
-const HomePageIntro = ({ lng }: { lng: string }) => {
-  const { t } = useTranslation(lng)
+async function HomePageIntro ({ lng }: { lng: string }) {
+  const { t } = await useTranslation(lng)
 
   const scrollToHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
