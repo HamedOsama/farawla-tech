@@ -4,10 +4,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import logo from '@assets/logo.png'
-import { useTranslation } from '@/app/i18n'
+import { useTranslation } from '@/app/i18n/client'
 
-async function HomePageIntro ({ lng }: { lng: string }) {
-  const { t } = await useTranslation(lng)
+const HomePageIntro = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng)
 
   const scrollToHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -40,10 +40,10 @@ async function HomePageIntro ({ lng }: { lng: string }) {
         transition={{ duration: 1.5, delay: 0.25 }}
         className="h-full grid justify-items-center content-center gap-10 w-full sm:w-3/5">
         <p className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>
-          {t('pageIntro')}
+          {lng === "ar"? "في زرعك اللي يهمك  إحنا في ظهرك ولا يهمك":"We take care of your red"}
         </p>
         <button onClick={scrollToHandler} type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>
-          {t('pageIntroBtn')}
+          {lng === "ar"? "حلول فراولة تيك": "Farawlatech Solutions "}
         </button>
       </motion.div>
     </div>
