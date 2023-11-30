@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import SectionTitle from './SectionTitle'
 
@@ -16,6 +16,7 @@ import { useTranslation } from '@/app/i18n/client'
 
 const Sponsors = ({ lng }: { lng: string }) => {
   const { t } = useTranslation(lng)
+  const [isIos, setIsIos] = useState(false)
 
   const sponsorImages = [
     {
@@ -43,9 +44,15 @@ const Sponsors = ({ lng }: { lng: string }) => {
       alt: 'Next Food',
     }
   ]
+  
+  useEffect(() => {
+    const userAgent = window?.navigator?.userAgent;
+    if (userAgent?.match(/iPad/i) || userAgent?.match(/iPhone/i)) { setIsIos(true); }
+    else { setIsIos(false);}
+  }, [])
 
   return (
-    <section className='relative bg-white flex flex-col items-center justify-center py-2 sm:py-10 lg:py-20'>
+    <section className={isIos? 'relative bg-white flex flex-col items-center justify-center py-2 sm:py-10 lg:py-20 gap-96': 'relative bg-white flex flex-col items-center justify-center py-2 sm:py-10 lg:py-20'}>
       <div className="w-full flex justify-center md:justify-start md:px-32">
         {/* <span className='absolute top-1/2 -right-5 md:-right-14 -translate-y-1/2 rotate-180'>
           <Image
