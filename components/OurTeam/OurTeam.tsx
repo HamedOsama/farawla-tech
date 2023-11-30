@@ -55,7 +55,7 @@ const OurTeam = async ({ lng }: { lng: string }) => {
         </span>
         <SectionTitle>{t('ourTeamTitle')}</SectionTitle>
       </div>
-      <div className="flex-1 grid md:grid-cols-3 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto">
+      <div className="flex-1 grid md:grid-cols-3 items-stretch justify-center content-center w-3/4 gap-8 sm:gap-8 mx-auto max-sm:min-h-[120svh]">
         {members.map((solution, i) => (
           <div className={`w-full md:order-${5 - i} `} key={i}>
             <Member
