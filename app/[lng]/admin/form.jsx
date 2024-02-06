@@ -2,8 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 // import { ArrowLeft } from 'lucide-react'
-import SideImg from '../../../public/assets/admin/side.png'
-import SideMobileImg from '../../../public/assets/admin/sideMobile.png'
+import Logo from '../../../public/assets/white-logo.png'
 import handler from '../../api/submit'
 import { storage } from '../../api/firebase.config'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
@@ -76,13 +75,10 @@ const Form =  ({lng = 'en', ok = false}) => {
   
   
 
-  return <main className='flex items-center justify-center flex-wrap bg-white relative w-full p-8 max-sm:p-4 gap-5' style={ok? {}: {display: 'none'}}>
+  return <main className='flex items-stretch justify-center flex-wrap bg-white relative w-full p-8 max-sm:p-4 gap-5' style={ok? {}: {display: 'none'}}>
 
-    <div className="w-1/4 max-lg:hidden max-h-[75svh] overflow-hidden rounded-3xl">
-      <Image src={SideImg} alt='farawla logo' className='w-full h-full object-contain -mt-12'/>
-    </div>
-    <div className="w-full hidden max-lg:block">
-      <Image src={SideMobileImg} alt='farawla logo' className='w-full h-full'/>
+    <div className="w-1/4 overflow-hidden flex justify-center items-center rounded-3xl bg-gradient-to-b from-[#D00720] to-[#FF7687]">
+      <Image src={Logo} alt='farawla logo' className='w-10/12 object-contain '/>
     </div>
     <form className="w-1/2 h-fit max-lg:w-full max-sm:w-full bg-[#ff00220d] rounded-3xl text-gray-800 min-h-[75svh] flex flex-col items-center justify-center" 
     onSubmit={submitForm}>

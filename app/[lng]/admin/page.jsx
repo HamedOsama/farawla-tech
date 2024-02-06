@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 // import { ArrowLeft } from 'lucide-react'
-import SideImg from '../../../public/assets/admin/side.png'
+import Logo from '../../../public/assets/white-logo.png'
 import SideMobileImg from '../../../public/assets/admin/sideMobile.png'
 import Form from './form'
 
@@ -31,12 +31,9 @@ const page =  ({params}) => {
   }, [isOk])
   
 return <section className='flex items-center justify-center flex-wrap bg-white relative w-full h-full p-8 max-sm:p-4 gap-5'>
-  {!isOk? <div className="flex items-center justify-center flex-wrap relative w-full h-full" style={isOk? {display: 'none'}: {}}>
-      <div className="w-1/4 max-lg:hidden max-h-[75svh] overflow-hidden rounded-3xl">
-        <Image src={SideImg} alt='farawla logo' className='w-full h-full object-contain -mt-12'/>
-      </div>
-      <div className="w-full hidden max-lg:block">
-        <Image src={SideMobileImg} alt='farawla logo' className='w-full h-full'/>
+  {!isOk? <div className="flex items-stretch justify-center flex-wrap relative w-full h-full" style={isOk? {display: 'none'}: {}}>
+      <div className="w-1/4 overflow-hidden flex justify-center items-center rounded-3xl bg-gradient-to-b from-[#D00720] to-[#FF7687]">
+        <Image src={Logo} alt='farawla logo' className='w-10/12 object-contain '/>
       </div>
       <form className="w-1/2 h-fit max-lg:w-full max-sm:w-full bg-[#ff00220d] rounded-3xl text-gray-800 min-h-[75svh] flex flex-col items-center justify-center" 
       onSubmit={submitForm}>
@@ -54,7 +51,8 @@ return <section className='flex items-center justify-center flex-wrap bg-white r
         <button type="submit" disabled={isLoading} className="text-white bg-[#FF0020] hover:bg-[#ff3700] focus:ring-4 focus:outline-none focus:ring-[#ff002247] font-medium rounded-3xl text-sm w-full sm:w-auto px-5 py-2.5 text-center ">{isLoading? (lng === "ar"? "...جار الإرسال":"sending..."):(lng === "ar"? "ارسال":"Submit")}</button>
       </form>
     </div>
-    : <Form lng={lng} ok={isOk} />}
+    : <Form lng={lng} ok={isOk} />
+    }
   </section>
 }
 
