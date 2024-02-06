@@ -5,6 +5,10 @@ const nextConfig = {
   // flags: {
   //   DEV_SSR: false,
   // },
+  
+  images: {
+    domains: ['firebasestorage.googleapis.com'],
+  },
   env: {
     GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY,
     GOOGLE_CLIENT_EMAIL: process.env.GOOGLE_CLIENT_EMAIL,

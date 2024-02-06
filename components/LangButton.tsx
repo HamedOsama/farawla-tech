@@ -31,8 +31,7 @@ const LangButton: FC<LangButtonProps> = ({ lng }) => {
     href += `/${path[path.length - 1]}`
   }
   const onClickHandler = () => {
-    router.push(href)
-    router.refresh()
+    router.replace(href)
   }
   return <button
     type='button'

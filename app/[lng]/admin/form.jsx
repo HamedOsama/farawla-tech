@@ -7,9 +7,14 @@ import SideMobileImg from '../../../public/assets/admin/sideMobile.png'
 import handler from '../../api/submit'
 import { storage } from '../../api/firebase.config'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
+import { Editor } from "@/components/tiptab/editor";
 
 const Form =  ({lng = 'en', ok = false}) => {
-  const [form, setForm] = useState({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', desc: '', arDesc: '' })
+  const [form, setForm] = useState({ 
+    topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '' 
+  })
+  const [docu, setDocu] = useState()
+  const [arDocu, setArDocu] = useState()
   const [fileUploaded, setFileUploaded] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -17,7 +22,7 @@ const Form =  ({lng = 'en', ok = false}) => {
     e.preventDefault();
     
     if ( form.topic !== '' && form.arTopic !== '' && form.title !== '' && form.arTitle !== '' && form.conclusion !== '' && 
-    form.arConclusion != '' && form.subTitle !== '' && form.arSubTitle !== '' && form.desc !== '' && form.arDesc !== '' && fileUploaded !== null) {
+    form.arConclusion != '' && form.subTitle !== '' && form.arSubTitle !== '' && docu !== '' && arDocu !== '' && fileUploaded !== null) {
       
       setIsLoading(true)
       try{
@@ -54,11 +59,11 @@ const Form =  ({lng = 'en', ok = false}) => {
 
           const newRow = {
             topic: form.topic, arTopic: form.arTopic, title: form.title, arTitle: form.arTitle, conclusion: form.conclusion, createdDate,
-            arConclusion: form.arConclusion, subTitle: form.subTitle, arSubTitle: form.arSubTitle, desc: form.desc, arDesc: form.arDesc,
+            arConclusion: form.arConclusion, subTitle: form.subTitle, arSubTitle: form.arSubTitle, desc: docu, arDesc: arDocu,
             photo: url
           };
           await handler(newRow)
-          setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', desc: '', arDesc: '' })
+          setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '' })
           setFileUploaded(null)
           setIsLoading(false)
           alert('send successful')
@@ -118,8 +123,15 @@ const Form =  ({lng = 'en', ok = false}) => {
           value={form.arSubTitle || ''} onChange={e=>handleChange(e)} required />
         </div>
       </div>
-      <div className="mb-5 flex flex-wrap items-center justify-center gap-5 w-full">
-        <div className='w-[45%] max-lg:w-3/4 max-sm:w-11/12'>
+        <div className="relative z-0 mb-6 group w-11/12 max-lg:w-3/4 max-sm:w-11/12">
+          <p className="block mb-2 text-sm font-medium">{lng === "ar"? "الوصف بالانكليزية":"English Desc"}</p>
+          <Editor setDocu={setDocu} />
+        </div>
+        <div className="relative z-0 mb-6 group w-11/12 max-lg:w-3/4 max-sm:w-11/12">
+          <p className="block mb-2 text-sm font-medium">{lng === "ar"? "الوصف بالعربية":"Arabic Desc"}</p>
+          <Editor setDocu={setArDocu} />
+        </div>
+        {/* <div className='w-[45%] max-lg:w-3/4 max-sm:w-11/12'>
           <label htmlFor="desc" className="block mb-2 text-sm font-medium">{lng === "ar"? "الوصف بالانكليزية":"English Desc"}</label>
           <textarea type="text" id="desc" name="desc" className="bg-gray-50 resize-y border border-gray-300 text-sm rounded-lg focus:ring-[#FF0020] focus:border-[#FF0020] block w-full p-2.5" placeholder="" 
           value={form.desc || ''} onChange={e=>handleChange(e)} required />
@@ -128,8 +140,7 @@ const Form =  ({lng = 'en', ok = false}) => {
           <label htmlFor="arDesc" className="block mb-2 text-sm font-medium">{lng === "ar"? "الوصف بالعربية":"Arabic Desc"}</label>
           <textarea type="text" id="arDesc" name="arDesc" className="bg-gray-50 resize-y border border-gray-300 text-sm rounded-lg focus:ring-[#FF0020] focus:border-[#FF0020] block w-full p-2.5" placeholder="" 
           value={form.arDesc || ''} onChange={e=>handleChange(e)} required />
-        </div>
-      </div>
+        </div> */}
       <div className="mb-5 flex flex-wrap items-center justify-center gap-5 w-full">
         <div className='w-[45%] max-lg:w-3/4 max-sm:w-11/12'>
           <label htmlFor="conclusion" className="block mb-2 text-sm font-medium">{lng === "ar"? "الإستنتاج بالانكليزية":"English Conclusion"}</label>
