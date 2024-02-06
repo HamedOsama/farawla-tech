@@ -32,3 +32,16 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.tiptap.ProseMirror:focus-visible,
+.tiptap.ProseMirror:focus-within{
+  outline: none;
+}
+.tiptab-document h1, .tiptap h1{ @apply text-5xl }
+.tiptab-document h2, .tiptap h2{ @apply text-4xl }
+.tiptab-document h3, .tiptap h3{ @apply text-3xl }
+.tiptab-document h4, .tiptap h4{ @apply text-2xl }
+.tiptab-document h5, .tiptap h5{ @apply text-xl }
+.tiptab-document h6, .tiptap h6{ @apply text-lg }
+.tiptab-document ol, .tiptap ol{ @apply list-decimal list-outside mx-4}
+.tiptab-document ul, .tiptap ul{ @apply list-disc list-outside mx-4}
