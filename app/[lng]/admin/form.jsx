@@ -49,7 +49,7 @@ const Form =  ({lng = 'en', ok = false}) => {
 
   const uploadImgs =async() =>{
     if(fileUploaded !== null){
-      const fileRef = ref(storage, 'images/' + fileUploaded[0].name )
+      const fileRef = ref(storage, 'images/' +  Date.now() +  fileUploaded[0].name )
       uploadBytes(fileRef, fileUploaded[0]).then(async data=>{
         await getDownloadURL(data.ref).then(async url=>{
           const today = new Date();
