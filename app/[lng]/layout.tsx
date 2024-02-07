@@ -7,6 +7,7 @@ import { languages } from '../i18n/settings'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import ParticleBg from '@/components/ParticleBg'
+import { GoogleAnalytics } from '@next/third-parties/google'
 // import AOSWrapper from '@/components/AOSWrapper'
 
 import 'aos/dist/aos.css'
@@ -42,7 +43,7 @@ export default function RootLayout({
   }
 }) {
   return (
-    <html lang={lng} dir={dir(lng)} className={font.className}>
+    <html lang={lng} dir={dir(lng)} className={font.className} suppressHydrationWarning>
       <body className='overflow-x-hidden'>
         <ToastProvider />
         <ParticleBg />
@@ -55,6 +56,7 @@ export default function RootLayout({
         {/* @ts-expect-error Server Component */}
         <Footer lng={lng} />
       </body>
+      <GoogleAnalytics gaId="G-M40MWE3RFY" />
     </html>
   )
 }
