@@ -33,10 +33,6 @@ const Form =  ({lng = 'en', ok = false}) => {
         }catch(e){
           alert('error')
         }
-        location.reload()
-        setIsLoading(false)
-        setFileUploaded(null)
-        setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', desc: '', arDesc: '', slug: '', alt: '', tags: [] })
       }else{
         alert('slug must be unique')
       }
@@ -67,13 +63,19 @@ const Form =  ({lng = 'en', ok = false}) => {
             topic: form.topic, arTopic: form.arTopic, title: form.title, arTitle: form.arTitle, conclusion: form.conclusion, createdDate,
             arConclusion: form.arConclusion, subTitle: form.subTitle, arSubTitle: form.arSubTitle, desc: docu, arDesc: arDocu,
             photo: url,
-            tags, alt: form.alt, slug: form.slug
+            tags: tags.join(', '), alt: form.alt, slug: form.slug
           };
           await handler(newRow)
-          setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '' })
-          setFileUploaded(null)
-          setIsLoading(false)
-          alert('send successful')
+          .then(_=>{
+            
+            alert('send successful')
+            location.reload()
+            setIsLoading(false)
+            setFileUploaded(null)
+            setIsLoading(false)
+          }).catch(e=>{
+            alert(e.message)
+          })
         })
       })
     }else{
