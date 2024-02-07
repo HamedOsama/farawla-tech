@@ -7,32 +7,39 @@ import handler from '../../api/submit'
 import { storage } from '../../api/firebase.config'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { Editor } from "@/components/tiptab/editor";
+import { TagsInput } from "react-tag-input-component"; 
+import load from '../../api/load'
 
 const Form =  ({lng = 'en', ok = false}) => {
   const [form, setForm] = useState({ 
-    topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '' 
+    topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', slug: '', alt: '', tags: []
   })
+  const [tags, setTags] = useState([''])
   const [docu, setDocu] = useState()
   const [arDocu, setArDocu] = useState()
   const [fileUploaded, setFileUploaded] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [slugs, setSlugs] = useState([])
 
   const submitForm = async (e) => {
     e.preventDefault();
     
     if ( form.topic !== '' && form.arTopic !== '' && form.title !== '' && form.arTitle !== '' && form.conclusion !== '' && 
     form.arConclusion != '' && form.subTitle !== '' && form.arSubTitle !== '' && docu !== '' && arDocu !== '' && fileUploaded !== null) {
-      
-      setIsLoading(true)
-      try{
-        await uploadImgs()
-      }catch(e){
-        alert('error')
+      if(slugs.indexOf(form.slug) === -1){
+        setIsLoading(true)
+        try{
+          await uploadImgs()
+        }catch(e){
+          alert('error')
+        }
+        location.reload()
+        setIsLoading(false)
+        setFileUploaded(null)
+        setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', desc: '', arDesc: '', slug: '', alt: '', tags: [] })
+      }else{
+        alert('slug must be unique')
       }
-      setIsLoading(false)
-      setFileUploaded(null)
-      setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '', desc: '', arDesc: '' })
-     
     }else{
       alert('please fill all the fields')
     }
@@ -59,7 +66,8 @@ const Form =  ({lng = 'en', ok = false}) => {
           const newRow = {
             topic: form.topic, arTopic: form.arTopic, title: form.title, arTitle: form.arTitle, conclusion: form.conclusion, createdDate,
             arConclusion: form.arConclusion, subTitle: form.subTitle, arSubTitle: form.arSubTitle, desc: docu, arDesc: arDocu,
-            photo: url
+            photo: url,
+            tags, alt: form.alt, slug: form.slug
           };
           await handler(newRow)
           setForm({ topic: '', arTopic: '', title: '', arTitle: '', conclusion: '', arConclusion: '', subTitle: '', arSubTitle: '' })
@@ -73,7 +81,16 @@ const Form =  ({lng = 'en', ok = false}) => {
     }
   }
   
-  
+  useEffect(() => {
+    const loadData = async()=>{
+      const data = await load()
+      if(data && data[0]) {
+        const slugs = data.map((_)=>_.get("slug")) 
+        setSlugs(slugs)
+      }
+    }
+    loadData()
+  }, [])
 
   return <main className='flex items-stretch justify-center flex-wrap bg-white relative w-full p-8 max-sm:p-4 gap-5' style={ok? {}: {display: 'none'}}>
 
@@ -152,6 +169,23 @@ const Form =  ({lng = 'en', ok = false}) => {
       <div className="relative z-0 mb-6 group w-11/12 max-lg:w-3/4 max-sm:w-11/12">
           <label htmlFor="photos" className="block mb-2 text-sm font-medium">{lng === "ar"? "الصورة":"image"}</label>
           <input type="file" name="photos" id="photos"  className="bg-gray-50 resize-y border border-gray-300 text-sm rounded-lg focus:ring-[#FF0020] focus:border-[#FF0020] block w-full p-2.5" placeholder=" " onChange={e=>setFileUploaded(e.target.files)} required />
+      </div>
+      
+      <div className='relative z-0 mb-6 max-lg:w-3/4 max-sm:w-11/12 w-11/12'>
+        <label htmlFor="slug" className="block mb-2 text-sm font-medium">{lng === "ar"? "عنوان الصفحة":"Slug"}</label>
+        <input type="text" id="slug" name="slug" className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-[#FF0020] focus:border-[#FF0020] block w-full p-2.5" placeholder="must be unique.." 
+        value={form.slug || ''} onChange={e=>handleChange(e)} required />
+      </div>
+        
+      <div className='relative z-0 mb-6 max-lg:w-3/4 max-sm:w-11/12 w-11/12'>
+        <label htmlFor="alt" className="block mb-2 text-sm font-medium">{lng === "ar"? "الت الصورة":"Cover Image Alt"}</label>
+        <input type="text" id="alt" name="alt" className="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-[#FF0020] focus:border-[#FF0020] block w-full p-2.5" placeholder="" 
+        value={form.alt || ''} onChange={e=>handleChange(e)} required />
+      </div>
+        
+      <div className='relative z-0 mb-6 max-lg:w-3/4 max-sm:w-11/12 w-11/12'>
+        <p className="text-black text-base sm:text-lg font-light px-1 mt-2">Tags List</p>
+        <TagsInput value={tags} onChange={setTags} name="tags" placeHolder="tags" /> 
       </div>
       <button type="submit" disabled={isLoading} className="text-white bg-[#FF0020] hover:bg-[#ff3700] focus:ring-4 focus:outline-none focus:ring-[#ff002247] font-medium rounded-3xl text-sm w-full sm:w-auto px-5 py-2.5 text-center ">{isLoading? (lng === "ar"? "...جار الإرسال":"sending..."):(lng === "ar"? "ارسال":"Submit")}</button>
     </form>
