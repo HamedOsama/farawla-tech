@@ -60,7 +60,7 @@ const page = ({params}) => {
         <Image className="rounded-t-lg mx-auto w-full max-h-96 mt-4 object-cover min-w-full" src={post?.photo || img2} alt={post?.topic} 
         width={post?.photo?.width || 1000} height={post?.photo?.height || 500} />
         <p></p>
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-5 w-full tiptab-document">
           <p className='text-xl'>{lng === 'ar'? post?.arSubTitle : post?.subTitle}</p>
           <p className="text-gray-800" dangerouslySetInnerHTML={{ __html: lng === 'ar'? post?.arDesc : post?.desc }}></p>
         </div>
