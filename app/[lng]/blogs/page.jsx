@@ -33,10 +33,10 @@ const page = ({ params: { lng } }) => {
           title: _.get("title"), arTitle: _.get("arTitle"),
           conclusion: _.get("conclusion"), arConclusion: _.get("arConclusion"), subTitle: _.get("subTitle"), arSubTitle: _.get("arSubTitle"), desc: _.get("desc"),
            arDesc: _.get("arDesc"), photo: _.get("photo"),
-          createdDate: _.get("createdDate")
+          createdDate: _.get("createdDate"), slug: _.get("slug"), alt: _.get("alt"), tags: _.get("tags")
         }
       }) 
-      setPostsList(info)
+      setPostsList(info.reverse())
     }
     }
     loadData()
@@ -48,7 +48,7 @@ const page = ({ params: { lng } }) => {
     <div className="bg-white relative w-full py-8 sm:py-16 flex flex-col items-center justify-center gap-5">
       <div className="w-10/12 mx-auto grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4">
         {postsList.map((_, i)=>{
-          return <Link key={i} href={`/${lng}/blogs/${i}`}
+          return <Link key={i} href={`/${lng}/blogs/${_.slug}`}
           className="max-w-lg bg-white border border-gray-200 rounded-lg shadow cursor-pointer">
                   <Image className="rounded-t-lg mx-auto w-11/12 mt-4 h-44 object-cover" src={_?.photo || img2} alt={_.topic}
                   width={_?.photo?.width || 200} height={_?.photo?.height || 100} />
