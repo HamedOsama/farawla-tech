@@ -44,9 +44,9 @@ const page = ({params}) => {
     if(posts[0].photo){
       const thisBlog = posts?.find(_=>_?.slug === pathname.split('/')[3]) || posts?.find(_=>_?.slug === decodeURI(pathname.split('/')[3]))
       setPost(thisBlog)
-      console.log(pathname.split('/')[2], pathname.split('/')[3])
-      console.log('posts[0]?.slug', posts[0]?.slug)
-      console.log('thisBlog', thisBlog)
+      // console.log(pathname.split('/')[2], pathname.split('/')[3])
+      // console.log('posts[0]?.slug', posts[0]?.slug)
+      // console.log('thisBlog', thisBlog)
     }
   }, [posts])
   
