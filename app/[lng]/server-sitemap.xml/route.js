@@ -2,8 +2,6 @@ import { getServerSideSitemap } from 'next-sitemap';
 import load from '../../api/load';
 const URL = "https://www.farawlatech.com";
 
-const Sitemap = () => { reutrn (null) }
-
 async function getBlogs() {
     // Fetch data from external API
     // const res = await fetch('https://api.github.com/repos/vercel/next.js')
@@ -60,5 +58,3 @@ export async function GET(request) {
 
   return getServerSideSitemap([...routes, ...posts])
 }
-
-export default Sitemap
