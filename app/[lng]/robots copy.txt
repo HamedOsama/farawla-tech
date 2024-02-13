@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.farawlatech.com
+
+# Sitemaps
+# Sitemap: https://www.farawlatech.com/en/sitemap.xml
+Sitemap: https://www.farawlatech.com/en/server-sitemap.xml
