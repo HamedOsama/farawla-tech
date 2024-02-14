@@ -52,9 +52,9 @@ export async function GET(request) {
         // .forEach((route) => {
         // });
     }
-    console.log('routes', routes)
-    console.log('posts', posts)
-//   return [...routes, ...posts];
+    // console.log('routes', routes)
+    // console.log('posts', posts)
+    //  return [...routes, ...posts];
 
   return getServerSideSitemap([...routes, ...posts])
 }
