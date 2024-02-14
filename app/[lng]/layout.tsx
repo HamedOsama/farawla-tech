@@ -16,6 +16,9 @@ import AOSWrapper from '@/components/AOSWrapper'
 export const metadata = {
   title: 'Farawla Tech',
   description: '',
+  icons: {
+    icon: 'favicon.ico'
+  },
 }
 
 const font = Lalezar({

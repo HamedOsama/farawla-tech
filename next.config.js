@@ -5,7 +5,7 @@ const nextConfig = {
   // flags: {
   //   DEV_SSR: false,
   // },
-  
+    
   images: {
     domains: ['firebasestorage.googleapis.com'],
   },
