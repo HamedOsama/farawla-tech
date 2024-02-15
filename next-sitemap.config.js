@@ -45,16 +45,16 @@ module.exports = {
       }
     },
     additionalPaths: async (config) => [
-      await config.transform(config, '/en'),
-      await config.transform(config, '/en/about'),
-      await config.transform(config, '/en/blogs'),
-      await config.transform(config, '/en/contact'),
-      await config.transform(config, '/en/news'),
-      await config.transform(config, '/ar'),
-      await config.transform(config, '/ar/about'),
-      await config.transform(config, '/ar/blogs'),
-      await config.transform(config, '/ar/contact'),
-      await config.transform(config, '/ar/news'),
+      // await config.transform(config, '/en'),
+      // await config.transform(config, '/en/about'),
+      // await config.transform(config, '/en/blogs'),
+      // await config.transform(config, '/en/contact'),
+      // await config.transform(config, '/en/news'),
+      // await config.transform(config, '/ar'),
+      // await config.transform(config, '/ar/about'),
+      // await config.transform(config, '/ar/blogs'),
+      // await config.transform(config, '/ar/contact'),
+      // await config.transform(config, '/ar/news'),
     ],
     robotsTxtOptions: {
       policies: [

@@ -24,27 +24,30 @@ export async function GET(request) {
         await getBlogs().then(data=>{
           data.forEach(_=>
             posts.push({
-              url: `${URL}/${locale}/blogs/${encodeURI(_.slug)}`,
+              loc: `${URL}/${locale}/blogs/${encodeURI(_.slug)}`,
+              changefreq: 'weekly',
               lastModified: new Date().toISOString(),
               priority: .6,
             })
           )
           
         }).catch(e=>{
-          posts.push({url: e.message})
+          // posts.push({url: e.message})
         })
         const siteStaticRoutes = ["", "about", "contact", "news", "blogs"]
     siteStaticRoutes.forEach(element => {
           if(element === ""){
             routes.push({
-              url: `${URL}/${locale}`,
+              loc: `${URL}/${locale}`,
               lastModified: new Date().toISOString(),
+              changefreq: 'weekly',
               priority: 1
             })
           }else{
             routes.push({
-              url: `${URL}/${locale}/${element}`,
+              loc: `${URL}/${locale}/${element}`,
               lastModified: new Date().toISOString(),
+              changefreq: 'weekly',
               priority: .8
             })
           }
