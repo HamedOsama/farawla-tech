@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-    siteUrl: 'https://www.farawlatech.com',
+    siteUrl: 'https://farawla-tech.trendlix.com',
     changefreq: 'daily',
     priority: 0.8,
     // sitemapSize: 5000,
@@ -72,7 +72,7 @@ module.exports = {
         // },
       ],
       additionalSitemaps: [
-        'https://www.farawlatech.com/en/server-sitemap.xml', // <==== Add here
+        'https://farawla-tech.trendlix.com/en/server-sitemap.xml', // <==== Add here
       ],
     },
   }
