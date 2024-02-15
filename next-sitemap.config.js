@@ -9,11 +9,11 @@ module.exports = {
     exclude: ['/admin'],
     alternateRefs: [
       {
-        href: 'https://www.farawlatech.com/en',
+        href: 'https://farawla-tech.trendlix.com/en',
         hreflang: 'en',
       },
       {
-        href: 'https://www.farawlatech.com/ar',
+        href: 'https://farawla-tech.trendlix.com/ar',
         hreflang: 'ar',
       },
     ],
