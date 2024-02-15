@@ -26,7 +26,7 @@ export async function GET(request) {
             posts.push({
               loc: `${URL}/${locale}/blogs/${encodeURI(_.slug)}`,
               changefreq: 'weekly',
-              lastMod: new Date().toISOString(),
+              lastmod: new Date().toISOString(),
               priority: .6,
             })
           )
@@ -39,14 +39,14 @@ export async function GET(request) {
           if(element === ""){
             routes.push({
               loc: `${URL}/${locale}`,
-              lastMod: new Date().toISOString(),
+              lastmod: new Date().toISOString(),
               changefreq: 'weekly',
               priority: 1
             })
           }else{
             routes.push({
               loc: `${URL}/${locale}/${element}`,
-              lastMod: new Date().toISOString(),
+              lastmod: new Date().toISOString(),
               changefreq: 'weekly',
               priority: .8
             })
