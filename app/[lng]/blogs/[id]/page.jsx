@@ -51,6 +51,7 @@ const page = ({params}) => {
   }, [posts])
   
   return <section className='flex flex-col py-8 sm:py-16 bg-white relative'>
+  <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
 
     {typeof window !== undefined && post?.photo && <div className="w-10/12 mx-auto flex flex-col items-center justify-center gap-5">
       <div className='flex flex-col gap-5 w-full'>

@@ -21,13 +21,13 @@ const Problem = ({ name, img }: ProblemProps) => {
         className='aspect-square object-contain duration-1000 ease-in-out'
         data-aos="fade-up"
       />
-      <p
+      <h4
         className='text-black text-center text-lg sm:text-2xl duration-1000 delay-100 ease-in-out'
         data-aos="fade-up"
         data-aos-delay="50"
       >
         {name}
-      </p>
+      </h4>
     </div>
   )
 }

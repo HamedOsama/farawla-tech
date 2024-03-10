@@ -15,7 +15,7 @@ import AOSWrapper from '@/components/AOSWrapper'
 
 export const metadata = {
   title: 'Farawla Tech',
-  description: '',
+  description: 'We seek to design and implement soilless cultivation systems for the production of strawberries for strawberry farmers, systems that follow precession agriculture technique that aim to provide optimal and accurate plant needs in the right timings of fertilizers and water, which works to reduce production costs, relying on measuring and technical matching tools such as The sensors also aim to secure agricultural investment and protect it from pest risks and reduce the negative effects of climate change. And that is by providing deep knowledge by a specialized and expert team to maximize profitability, God willing',
   icons: {
     icon: 'favicon.ico'
   },

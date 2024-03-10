@@ -32,16 +32,16 @@ const HomePageIntro = ({ lng }: { lng: string }) => {
           height={180}
           priority
         />
-        <p className='text-white text-4xl sm:text-3xl lg:text-5xl xl:text-6xl'>Farawlatech</p>
+        <h2 className='text-white text-4xl sm:text-3xl lg:text-5xl xl:text-6xl'>Farawlatech</h2>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.5, delay: 0.25 }}
         className="h-full grid justify-items-center content-center gap-10 w-full sm:w-3/5">
-        <p className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>
+        <h2 className='text-white text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center'>
           {lng === "ar"? "في زرعك اللي يهمك  إحنا في ظهرك ولا يهمك":"We take care of your red"}
-        </p>
+        </h2>
         <button onClick={scrollToHandler} type='button' className='text-white outline-none px-4 py-2 border border-white duration-300 ease-in-out hover:bg-white/60'>
           {lng === "ar"? "حلول فراولة تيك": "Farawlatech Solutions "}
         </button>

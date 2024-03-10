@@ -27,7 +27,7 @@ const Member = ({ name, position, faculty, university, img }: MemberProps) => {
           className='aspect-square object-contain'
         />
       </div>
-      <p className='text-[#D20721] text-center text-lg sm:text-2xl'>{name}</p>
+      <h4 className='text-[#D20721] text-center text-lg sm:text-2xl'>{name}</h4>
       <p className='text-black text-center text-base sm:text-lg'>{position}</p>
       <p className='text-black text-center text-base sm:text-lg'>{faculty}</p>
       <p className='text-black text-center text-base sm:text-lg'>{university}</p>
