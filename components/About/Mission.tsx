@@ -19,9 +19,9 @@ const Mission = ({ lng }: { lng: string }) => {
         <SectionTitle>
         {t('mission.title')}
         </SectionTitle>
-        <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center'>
+        <h4 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center'>
         {t('mission.des')}
-        </p>
+        </h4>
       </div>
     </section>
   )

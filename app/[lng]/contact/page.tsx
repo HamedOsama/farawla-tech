@@ -86,6 +86,7 @@ const page = ({ params: { lng } }: IParams) => {
 
   }
   return <main>
+  <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
     <section className='min-h-screen relative bg-white'>
       <div className="absolute inset-0">
         <Image

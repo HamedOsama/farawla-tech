@@ -29,7 +29,7 @@ const Offer = ({ lng }: { lng: string }) => {
             transform: isInView ? 'translateX(0)' : 'translateX(500px)',
           }}
         />
-        <p
+        <h4
           className='text-black text-3xl font-semibold text-center duration-700'
           style={{
             opacity: isInView ? 1 : 0,
@@ -37,7 +37,7 @@ const Offer = ({ lng }: { lng: string }) => {
           }}
         >
           {t('offerDes')}
-        </p>
+        </h4>
       </div>
     </section>
   )

@@ -14,6 +14,7 @@ const page = async ({ params: { lng } }: IParams) => {
   const { t } = await useTranslation(lng)
 
   return <main className='flex flex-col'>
+  <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
 
     <div className="bg-white relative w-full py-8 sm:py-16">
       <div className="flex-1 w-10/12 sm:3/4 mx-auto flex flex-col gap-6 sm:gap-12">

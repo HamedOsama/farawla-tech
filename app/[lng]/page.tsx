@@ -17,6 +17,7 @@ export const metadata = {
 export default async function Home({ params: { lng } }: IParams) {
   return (
     <main>
+      <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
       <section className="relative">
         <div className="w-full h-full min-h-[calc(100dvh-196px)] sm:min-h-[calc(100vh-128px)]">
           {/* <ParticleBg /> */}

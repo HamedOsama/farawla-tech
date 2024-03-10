@@ -44,6 +44,7 @@ const page = ({ params: { lng } }) => {
   
 
   return <main className='flex flex-col'>
+  <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
 
     <div className="bg-white relative w-full py-8 sm:py-16 flex flex-col items-center justify-center gap-5">
       <div className="w-10/12 mx-auto grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4">

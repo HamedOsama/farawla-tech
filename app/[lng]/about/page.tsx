@@ -11,6 +11,7 @@ import Sponsors from '@/components/Sponsors'
 const page = async ({ params: { lng } }: IParams) => {
   return (
     <main>
+      <h1 className=' sr-only'>Farawlatech / فراولة تك</h1>
       
       <AboutUs lng={lng}/>
       <Mission lng={lng}/>
