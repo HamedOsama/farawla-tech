@@ -54,7 +54,7 @@ const page = ({ params: { lng } }) => {
                   width={_?.photo?.width || 200} height={_?.photo?.height || 100} />
               <div className="p-5 flex flex-col gap-5">
                 <p className="bg-blue-100 text-[#4B6BFB] text-sm font-medium me-2 px-2.5 py-0.5 rounded w-fit">{lng === 'ar'? _.arTopic:_.topic}</p>
-                <p className=" text-gray-900 text-2xl">{lng === 'ar'? _.arTitle:_.title}</p>
+                <h2 className=" text-gray-900 text-2xl">{lng === 'ar'? _.arTitle:_.title}</h2>
                 <p className=" text-gray-500">{ _.createdDate}</p>
               </div>
           </Link>
