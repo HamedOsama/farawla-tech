@@ -55,7 +55,7 @@ const page = ({params}) => {
     {typeof window !== undefined && post?.photo && <div className="w-10/12 mx-auto flex flex-col items-center justify-center gap-5">
       <div className='flex flex-col gap-5 w-full'>
         <p className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded w-fit">{lng === 'ar'? post?.arTopic: post?.topic}</p>
-        <p className=" text-gray-900 text-2xl">{lng === 'ar'? post?.arTitle: post?.title}</p>
+        <h2 className=" text-gray-900 text-2xl">{lng === 'ar'? post?.arTitle: post?.title}</h2>
         <p className=" text-gray-500">{post?.createdDate}</p>
         <Image className="rounded-t-lg mx-auto w-full max-h-96 mt-4 object-cover min-w-full" src={post?.photo || img2} alt={post?.topic} 
         width={post?.photo?.width || 1000} height={post?.photo?.height || 500} />
