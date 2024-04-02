@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-    siteUrl: 'https://farawla-tech.trendlix.com',
+    siteUrl: 'https://www.farawlatech.com',
     changefreq: 'daily',
     priority: 0.8,
     // sitemapSize: 5000,
@@ -9,11 +9,11 @@ module.exports = {
     exclude: ['/admin'],
     alternateRefs: [
       {
-        href: 'https://farawla-tech.trendlix.com/en',
+        href: 'https://www.farawlatech.com/en',
         hreflang: 'en',
       },
       {
-        href: 'https://farawla-tech.trendlix.com/ar',
+        href: 'https://www.farawlatech.com/ar',
         hreflang: 'ar',
       },
     ],
@@ -72,7 +72,7 @@ module.exports = {
         // },
       ],
       additionalSitemaps: [
-        'https://farawla-tech.trendlix.com/en/server-sitemap.xml', // <==== Add here
+        'https://www.farawlatech.com/en/server-sitemap.xml', // <==== Add here
       ],
     },
   }

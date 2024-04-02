@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://farawla-tech.trendlix.com
+Host: https://www.farawlatech.com
 
 # Sitemaps
-# Sitemap: https://farawla-tech.trendlix.com/en/sitemap.xml
-Sitemap: https://farawla-tech.trendlix.com/en/server-sitemap.xml
+# Sitemap: https://www.farawlatech.com/en/sitemap.xml
+Sitemap: https://www.farawlatech.com/en/server-sitemap.xml
