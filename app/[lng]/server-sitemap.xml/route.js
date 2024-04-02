@@ -1,6 +1,6 @@
 import { getServerSideSitemap } from 'next-sitemap';
 import load from '../../api/load';
-const URL = "https://farawla-tech.trendlix.com";
+const URL = "https://www.farawlatech.com";
 
 async function getBlogs() {
     // Fetch data from external API
