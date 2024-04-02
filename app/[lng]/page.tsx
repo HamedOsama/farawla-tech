@@ -10,6 +10,9 @@ import Sponsors from '@/components/Sponsors'
 
 export const metadata = {
   title: 'Home',
+  verification: { 
+    google: "S4bcpPDjYh8n2IwThbLBTOmxm4JBYhBgH8tB0wMHtLc", 
+  }
 }
 export default async function Home({ params: { lng } }: IParams) {
   return (
