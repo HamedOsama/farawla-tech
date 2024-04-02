@@ -19,9 +19,6 @@ export const metadata = {
   icons: {
     icon: 'favicon.ico'
   },
-  verification: { 
-    google: "S4bcpPDjYh8n2IwThbLBTOmxm4JBYhBgH8tB0wMHtLc", 
-  }
 }
 
 const font = Lalezar({
