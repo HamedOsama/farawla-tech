@@ -18,7 +18,7 @@ const LangButton: FC<LangButtonProps> = ({ lng }) => {
   // get the last part of the path
   const path = pathName.split('/')
   // rejected paths
-  const rejected = ['ar', 'en', 'favicon.ico', 'robots.txt']
+  const rejected = ['ar', 'en', 'favicon.ico', 'robots.txt', 'google2ac6b561a18c4332.html']
   // initial href
   let href = `/${lng}`
   // check if the last part of the path is a language
