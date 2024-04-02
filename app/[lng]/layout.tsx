@@ -19,6 +19,9 @@ export const metadata = {
   icons: {
     icon: 'favicon.ico'
   },
+  verification: { 
+    google: "S4bcpPDjYh8n2IwThbLBTOmxm4JBYhBgH8tB0wMHtLc", 
+  }
 }
 
 const font = Lalezar({
@@ -59,7 +62,7 @@ export default function RootLayout({
         {/* @ts-expect-error Server Component */}
         <Footer lng={lng} />
       </body>
-      <GoogleAnalytics gaId="G-M40MWE3RFY" />
+      <GoogleAnalytics gaId="G-T5ED6GPN7B" />
     </html>
   )
 }
